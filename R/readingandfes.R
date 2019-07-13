@@ -1,4 +1,4 @@
-#' @useDynLib metadynminer
+#' @useDynLib metadynminer3d
 #' @importFrom Rcpp sourceCpp
 #' @importFrom misc3d contour3d
 #' @importFrom rgl axes3d title3d box3d text3d
@@ -159,151 +159,83 @@ tail.hillsfile3d<-function(x, n=10,...) {
 
 #' Plot hillsfile3d object
 #'
-#' `plot.hillsfile3d` plots hillsfile object. For a hillsfile with one collective variable it plots its evolution.
-#' For a hillsfile with two collective variables it plots CV1 vs. CV2.
+#' `plot.hillsfile3d` plots hillsfile object. It plots CV1 vs CV2 vs CV3.
 #'
 #' @param x hillsfile object.
+#' @param xlab a title for the x axis: see 'title'.
+#' @param ylab a title for the y axis: see 'title'.
+#' @param zlab a title for the z axis: see 'title'.
+#' @param col color code or name, see 'par'.
+#' @param xlim numeric vector of length 2, giving the x coordinates range.
+#' @param ylim numeric vector of length 2, giving the y coordinates range.
+#' @param zlim numeric vector of length 2, giving the z coordinates range.
+#' @param ... further arguments passed to or from other methods.
+#'
+#' @export
+#' @examples
+#' plot(acealanme3d)
+plot.hillsfile3d<-function(x,
+                           xlab=NULL, ylab=NULL, zlab=NULL,
+                           xlim=NULL, ylim=NULL, zlim=NULL,
+                           main=NULL, sub=NULL,
+                           col="orange",...) {
+  hills <-x
+  xlims<-NULL
+  ylims<-NULL
+  zlims<-NULL
+  if(!is.null(xlim)) {xlims<-xlim}
+  if(!is.null(ylim)) {ylims<-ylim}
+  if(!is.null(zlim)) {zlims<-zlim}
+  points3d(hills$hillsfile[,2:4], col=col)
+  axes3d()
+  title3d(xlab=xlab, ylab=ylab, zlab=zlab,
+          main=main, sub=sub)
+  box3d()
+}
+
+#' Plot evolution of heights of hills in hillsfile3d object
+#'
+#' `plotheights.hillsfile3d` plots evolution of heights of hills. In well tempered
+#' metadynamics hill heights decrees with flooding of the free energy surface.
+#' Evolution of heights may be useful to evaluate convergence of the simulation.
+#'
+#' @param hills hillsfile object.
 #' @param ignoretime time in the first column of the HILLS file will be ignored.
 #' @param main an overall title for the plot: see 'title'.
 #' @param sub a sub title for the plot: see 'title'.
 #' @param xlab a title for the x axis: see 'title'.
 #' @param ylab a title for the y axis: see 'title'.
 #' @param asp the y/x aspect ratio, see 'plot.window'.
-#' @param pch plotting 'character', i.e., symbol to use. See 'points'.
 #' @param col color code or name, see 'par'.
-#' @param bg background (fill) color for the open plot symbols given by
-#'        'pch = 21:25'.
-#' @param cex character (or symbol) expansion: a numerical vector. This
-#'        works as a multiple of 'par("cex")'.
 #' @param lwd line width for drawing symbols see 'par'.
 #' @param xlim numeric vector of length 2, giving the x coordinates range.
 #' @param ylim numeric vector of length 2, giving the y coordinates range.
 #' @param axes a logical value indicating whether both axes should be drawn
 #'        on the plot.
-#' @param ... further arguments passed to or from other methods.
 #'
 #' @export
 #' @examples
-#' plot(acealanme)
-plot.hillsfile<-function(x, ignoretime=FALSE,
-                         xlab=NULL, ylab=NULL,
-                         xlim=NULL, ylim=NULL,
-                         main=NULL, sub=NULL,
-                         pch=1, col="black", bg="red", cex=1,
-                         asp=NULL, lwd=1, axes=TRUE,...) {
-  hills <-x
-  xlims<-NULL
-  ylims<-NULL
-  if(!is.null(xlim)) {xlims<-xlim}
-  if(!is.null(ylim)) {ylims<-ylim}
-  if(hills$size[2]==5) {
-    if((hills$per[1]==T)&is.null(ylim)) {ylims<-hills$pcv1}
-    if(is.null(xlab)) xlab="time"
-    if(is.null(ylab)) ylab="CV"
-    if(ignoretime) {
-      plot(seq(from=hills$hillsfile[1,1],by=hills$hillsfile[1,1],length.out=nrow(hills$hillsfile)),
-           hills$hillsfile[,2], type="l",
-           xlab=xlab, ylab=ylab,
-           main=main, sub=sub,
-           xlim=xlims, ylim=ylims,
-           col=col, cex=cex, lwd=lwd,
-           asp=asp, axes=axes)
-    } else {
-      plot(hills$hillsfile[,1], hills$hillsfile[,2], type="l",
-           xlab=xlab, ylab=ylab,
-           main=main, sub=sub,
-           xlim=xlims, ylim=ylims,
-           col=col, cex=cex, lwd=lwd,
-           asp=asp, axes=axes)
-    }
-  }
-  if(hills$size[2]==7 || hills$size[2]==9) {
-    if((hills$per[1]==T)&is.null(xlim)) {xlims<-hills$pcv1}
-    if((hills$per[2]==T)&is.null(ylim)) {ylims<-hills$pcv2}
-    if(is.null(xlab)) xlab="CV1"
-    if(is.null(ylab)) ylab="CV2"
-    plot(hills$hillsfile[,2], hills$hillsfile[,3], type="p",
+#' plotheights(acealanme3d)
+plotheights.hillsfile3d<-function(hills, ignoretime=FALSE,
+                                  xlab=NULL, ylab=NULL,
+                                  xlim=NULL, ylim=NULL,
+                                  main=NULL, sub=NULL,
+                                  col="black", asp=NULL, lwd=1, axes=TRUE) {
+  if(is.null(xlab)) xlab="time"
+  if(is.null(ylab)) ylab="hill height"
+  if(ignoretime) {
+    plot(seq(from=hills$hillsfile[1,1],by=hills$hillsfile[1,1],length.out=nrow(hills$hillsfile)),
+         hills$hillsfile[,8], type="l",
          xlab=xlab, ylab=ylab,
          main=main, sub=sub,
-         xlim=xlims, ylim=ylims,
-         pch=pch, col=col, bg=bg, cex=cex, lwd=lwd,
+         col=col, lwd=lwd,
          asp=asp, axes=axes)
-  }
-}
-
-#' Plot points for hillsfile object
-#'
-#' `points.hillsfile` plots points for hillsfile object. For a hillsfile with one
-#' collective variable it plots its evolution. For a hillsfile with two collective
-#' variables it plots CV1 vs. CV2.
-#'
-#' @param x hillsfile object.
-#' @param ignoretime time in the first column of the HILLS file will be ignored.
-#' @param pch plotting 'character', i.e., symbol to use. See 'points'.
-#' @param col color code or name, see 'par'.
-#' @param bg background (fill) color for the open plot symbols given by
-#'        'pch = 21:25'.
-#' @param cex character (or symbol) expansion: a numerical vector. This
-#'        works as a multiple of 'par("cex")'.
-#' @param lwd line width for drawing symbols see 'par'.
-#' @param ... further arguments passed to or from other methods.
-#'
-#' @export
-#' @examples
-#' plot(acealanme)
-#' points(acealanme, col="red")
-points.hillsfile<-function(x, ignoretime=FALSE,
-                           pch=1, col="black", bg="red", cex=1,
-                           lwd=1, ...) {
-  hills <- x
-  if(hills$size[2]==5) {
-    if(ignoretime) {
-      points(seq(from=hills$hillsfile[1,1],by=hills$hillsfile[1,1],length.out=nrow(hills$hillsfile)),
-             hills$hillsfile[,2],
-             col=col, cex=cex, lwd=lwd)
-    } else {
-      points(hills$hillsfile[,1], hills$hillsfile[,2],
-             col=col, cex=cex, lwd=lwd)
-    }
-  }
-  if(hills$size[2]==7 || hills$size[2]==9) {
-    points(hills$hillsfile[,2], hills$hillsfile[,3],
-           pch=pch, col=col, bg=bg, cex=cex, lwd=lwd)
-  }
-}
-
-#' Plot lines for hillsfile object
-#'
-#' `lines.hillsfile` plots lines for hillsfile object. For a hillsfile with one
-#' collective variable it plots its evolution. For a hillsfile with two collective
-#' variables it plots CV1 vs. CV2.
-#'
-#' @param x hillsfile object.
-#' @param ignoretime time in the first column of the HILLS file will be ignored.
-#' @param col color code or name, see 'par'.
-#' @param lwd line width for drawing symbols see 'par'.
-#' @param ... further arguments passed to or from other methods.
-#'
-#' @export
-#' @examples
-#' plot(acealanme)
-#' lines(acealanme, col="red")
-lines.hillsfile<-function(x, ignoretime=FALSE,
-                          lwd=1, col="black",...) {
-  hills <- x
-  if(hills$size[2]==5) {
-    if(ignoretime) {
-      lines(seq(from=hills$hillsfile[1,1],by=hills$hillsfile[1,1],length.out=nrow(hills$hillsfile)),
-            hills$hillsfile[,2],
-            col=col, lwd=lwd)
-    } else {
-      lines(hills$hillsfile[,1], hills$hillsfile[,2],
-           col=col, lwd=lwd)
-    }
-  }
-  if(hills$size[2]==7 || hills$size[2]==9) {
-    lines(hills$hillsfile[,2], hills$hillsfile[,3],
-          col=col, lwd=lwd)
+  } else {
+    plot(hills$hillsfile[,1], hills$hillsfile[,8], type="l",
+         xlab=xlab, ylab=ylab,
+         main=main, sub=sub,
+         col=col, lwd=lwd,
+         asp=asp, axes=axes)
   }
 }
 
@@ -314,7 +246,7 @@ lines.hillsfile<-function(x, ignoretime=FALSE,
 #' @param hills hillsfile3d object.
 #' @param imin index of a hill from which summation starts (default 1).
 #' @param imax index of a hill from which summation stops (default the rest of hills).
-#' @param xlim numeric vector of length 2, giving the CV1 coordinates range.
+#' @param x lim numeric vector of length 2, giving the CV1 coordinates range.
 #' @param ylim numeric vector of length 2, giving the CV2 coordinates range.
 #' @param zlim numeric vector of length 2, giving the CV3 coordinates range.
 #' @param npoints resolution of the free energy surface in number of points.
@@ -625,7 +557,6 @@ fes2.hillsfile3d<-function(hills, imin=1, imax=NULL, xlim=NULL, ylim=NULL, zlim=
     cfes<-list(fes=fes1+fes2$fes, hills=rbind(fes1$hills,fes2$hills), rows=fes2$rows, dimension=fes2$dimension, per=fes2$per, x=fes2$x, y=fes2$y, z=fes2$z, pcv1=fes2$pcv1, pcv2=fes2$pcv2, pcv3=fes2$pcv3)
   } else if(class(fes1)=="fes") {
     stop("Error: cannot sum 3D free energy surfaces with 1D or 2D, exiting")
-  }
   } else if(class(fes2)=="fes") {
     stop("Error: cannot sum 3D free energy surfaces with 1D or 2D, exiting")
   }
@@ -658,10 +589,8 @@ fes2.hillsfile3d<-function(hills, imin=1, imax=NULL, xlim=NULL, ylim=NULL, zlim=
     cfes<-list(fes=fes1$fes-fes2, hills=fes1$hills, rows=fes1$rows, dimension=fes1$dimension, per=fes1$per, x=fes1$x, y=fes1$y, z=fes1$z, pcv1=fes1$pcv1, pcv2=fes1$pcv2, pcv3=fes1$pcv3)
   } else if(class(fes2)=="fes3d") {
     cfes<-list(fes=fes1-fes2$fes, hills=fes2$hills, rows=fes2$rows, dimension=fes2$dimension, per=fes2$per, x=fes2$x, y=fes2$y, z=fes2$z, pcv1=fes2$pcv1, pcv2=fes2$pcv2, pcv3=fes2$pcv3)
-  }
   } else if(class(fes1)=="fes") {
     stop("Error: cannot subtract 3D free energy surfaces with 1D or 2D, exiting")
-  }
   } else if(class(fes2)=="fes") {
     stop("Error: cannot subtract 3D free energy surfaces with 1D or 2D, exiting")
   }
