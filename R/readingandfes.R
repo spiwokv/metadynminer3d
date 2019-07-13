@@ -1,10 +1,9 @@
 #' @useDynLib metadynminer3d
-#' importFrom metadynminer feprof fesfes2 fesminima oneminimum plotheights
+#' importFrom metadynminer feprof fes fes2 fesminima oneminimum plotheights
 #' @importFrom Rcpp sourceCpp
 #' @importFrom misc3d contour3d
 #' @importFrom rgl axes3d title3d box3d text3d points3d
 NULL
-library(metadynminer)
 
 #' Read 3D HILLS from Plumed
 #'
