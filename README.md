@@ -12,7 +12,8 @@ metadynminer is R packages for reading, analysis and visualization of metadynami
 It reads HILLS files from Plumed, calculates free energy surface by fast Bias Sum algorithm, finds minima and analyses
 transition paths by Nudged Elastic Band method.
 
-metadynminer3d is its addendum for plotting 3D free energy surfaces. It uses RGL package.
+metadynminer3d is its addendum for plotting 3D free energy surfaces. It uses RGL package. metadynminer3d installs and
+loads metadynminer automatically.
 
 ## Usage
 ```R
