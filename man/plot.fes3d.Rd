@@ -23,6 +23,10 @@
 
 \item{zlab}{a title for the z axis: see 'title'.}
 
+\item{main}{an overall title for the plot: see 'title'.}
+
+\item{sub}{a sub title for the plot: see 'title'.}
+
 \item{level}{number or numeric vector of levels at which to draw 3D isosurface.}
 
 \item{col}{color of the free energy surface. It can be a single color

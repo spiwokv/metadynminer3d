@@ -731,6 +731,8 @@ summary.fes3d<-function(object,...) {
 #' @param xlim numeric vector of length 2, giving the x coordinates range.
 #' @param ylim numeric vector of length 2, giving the y coordinates range.
 #' @param zlim numeric vector of length 2, giving the z coordinates range.
+#' @param main an overall title for the plot: see 'title'.
+#' @param sub a sub title for the plot: see 'title'.
 #' @param level number or numeric vector of levels at which to draw 3D isosurface.
 #' @param fill a logical value indicating whether 3D isosurface is ploted as
 #'        solid surface (True) or wireframe (False).
@@ -743,6 +745,7 @@ summary.fes3d<-function(object,...) {
 plot.fes3d<-function(x, xlim=NULL, ylim=NULL, zlim=NULL,
                      xlab=NULL, ylab=NULL, zlab=NULL,
                      level=NULL, col=NULL, alpha=NULL,
+                     main=NULL, sub=NULL,
                      fill=T,...) {
   close.screen(all.screens=TRUE)
   inputfes<-x
@@ -768,8 +771,7 @@ plot.fes3d<-function(x, xlim=NULL, ylim=NULL, zlim=NULL,
   contour3d(f=fes, level=level, x=x, y=y, z=z, 
             color=col, alpha=alpha, fill=fill)
   axes3d()
-  title3d(xlab=xlab, ylab=ylab, zlab=zlab,
-          main=main, sub=sub)
+  title3d(xlab=xlab, ylab=ylab, zlab=zlab, main=main, sub=sub)
   box3d()
 }
 

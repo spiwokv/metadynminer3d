@@ -23,6 +23,10 @@
 
 \item{zlim}{numeric vector of length 2, giving the z coordinates range.}
 
+\item{main}{an overall title for the plot: see 'title'.}
+
+\item{sub}{a sub title for the plot: see 'title'.}
+
 \item{col}{color code or name, see 'par'.}
 
 \item{...}{further arguments passed to or from other methods.}
