@@ -4,6 +4,7 @@
 #' @importFrom misc3d contour3d
 #' @importFrom rgl axes3d title3d box3d text3d points3d
 NULL
+library(metadynminer)
 
 #' Read 3D HILLS from Plumed
 #'
@@ -178,7 +179,7 @@ tail.hillsfile3d<-function(x, n=10,...) {
 #' @examples
 #' plot(acealanme3d)
 plot.hillsfile3d<-function(x,
-                           xlab=NULL, ylab=NULL, zlab=NULL,
+                           xlab="CV1", ylab="CV2", zlab="CV3",
                            xlim=NULL, ylim=NULL, zlim=NULL,
                            main=NULL, sub=NULL,
                            col="orange",...) {
