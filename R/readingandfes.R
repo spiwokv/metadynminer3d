@@ -165,6 +165,8 @@ tail.hillsfile3d<-function(x, n=10,...) {
 #' @param xlab a title for the x axis: see 'title'.
 #' @param ylab a title for the y axis: see 'title'.
 #' @param zlab a title for the z axis: see 'title'.
+#' @param main an overall title for the plot: see 'title'.
+#' @param sub a sub title for the plot: see 'title'.
 #' @param col color code or name, see 'par'.
 #' @param xlim numeric vector of length 2, giving the x coordinates range.
 #' @param ylim numeric vector of length 2, giving the y coordinates range.

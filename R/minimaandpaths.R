@@ -198,6 +198,8 @@ summary.minima3d<-function(object, temp=300, eunit="kJ/mol",...) {
 #' @param xlab a title for the x axis: see 'title'.
 #' @param ylab a title for the y axis: see 'title'.
 #' @param zlab a title for the z axis: see 'title'.
+#' @param main an overall title for the plot: see 'title'.
+#' @param sub a sub title for the plot: see 'title'.
 #' @param col color of the free energy surface. It can be a single color
 #'        or a vector with multiple colors for multiple 3D isosurfaces.
 #' @param alpha number or numeric vector of alpha levels (transparency) of
@@ -218,6 +220,7 @@ summary.minima3d<-function(object, temp=300, eunit="kJ/mol",...) {
 plot.minima3d <- function(x, xlim=NULL, ylim=NULL, zlim=NULL,
                     xlab=NULL, ylab=NULL, zlab=NULL,
                     level=NULL, col=NULL, alpha=NULL,
+                    main=NULL, sub=NULL,
                     fill=TRUE,...) {
   minims <- x
   fes<-minims$fes
