@@ -1,5 +1,4 @@
 #' @useDynLib metadynminer3d
-#' @import metadynminer
 #' @importFrom Rcpp sourceCpp
 #' @importFrom misc3d contour3d
 #' @importFrom rgl axes3d title3d box3d text3d points3d
