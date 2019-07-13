@@ -625,7 +625,6 @@ fes2.hillsfile3d<-function(hills, imin=1, imax=NULL, xlim=NULL, ylim=NULL, zlim=
     cfes<-list(fes=fes1+fes2$fes, hills=rbind(fes1$hills,fes2$hills), rows=fes2$rows, dimension=fes2$dimension, per=fes2$per, x=fes2$x, y=fes2$y, z=fes2$z, pcv1=fes2$pcv1, pcv2=fes2$pcv2, pcv3=fes2$pcv3)
   } else if(class(fes1)=="fes") {
     stop("Error: cannot sum 3D free energy surfaces with 1D or 2D, exiting")
-  }
   } else if(class(fes2)=="fes") {
     stop("Error: cannot sum 3D free energy surfaces with 1D or 2D, exiting")
   }
@@ -658,7 +657,6 @@ fes2.hillsfile3d<-function(hills, imin=1, imax=NULL, xlim=NULL, ylim=NULL, zlim=
     cfes<-list(fes=fes1$fes-fes2, hills=fes1$hills, rows=fes1$rows, dimension=fes1$dimension, per=fes1$per, x=fes1$x, y=fes1$y, z=fes1$z, pcv1=fes1$pcv1, pcv2=fes1$pcv2, pcv3=fes1$pcv3)
   } else if(class(fes2)=="fes3d") {
     cfes<-list(fes=fes1-fes2$fes, hills=fes2$hills, rows=fes2$rows, dimension=fes2$dimension, per=fes2$per, x=fes2$x, y=fes2$y, z=fes2$z, pcv1=fes2$pcv1, pcv2=fes2$pcv2, pcv3=fes2$pcv3)
-  }
   } else if(class(fes1)=="fes") {
     stop("Error: cannot subtract 3D free energy surfaces with 1D or 2D, exiting")
   }
