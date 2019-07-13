@@ -13,6 +13,7 @@ matrix:
       install:
         - R -e 'install.packages("Rcpp")'
         - R -e 'install.packages("rgl")'
+        - R -e 'install.packages("metadynminer")'
         - R -e 'install.packages("misc3d")'
         - R -e 'install.packages("covr")'
         - R -e 'install.packages("testthat")'
@@ -27,6 +28,7 @@ matrix:
       install:
         - R -e 'install.packages("Rcpp")'
         - R -e 'install.packages("rgl")'
+        - R -e 'install.packages("metadynminer")'
         - R -e 'install.packages("misc3d")'
         - R -e 'install.packages("covr")'
         - R -e 'install.packages("testthat")'
@@ -41,6 +43,7 @@ matrix:
       install:
         - R -e 'install.packages("Rcpp")'
         - R -e 'install.packages("rgl")'
+        - R -e 'install.packages("metadynminer")'
         - R -e 'install.packages("misc3d")'
         - R -e 'install.packages("covr")'
         - R -e 'install.packages("testthat")'
@@ -56,6 +59,7 @@ matrix:
       install:
         - R -e 'install.packages("Rcpp")'
         - R -e 'install.packages("rgl")'
+        - R -e 'install.packages("metadynminer")'
         - R -e 'install.packages("misc3d")'
         - R -e 'install.packages("covr")'
         - R -e 'install.packages("testthat")'
@@ -71,6 +75,7 @@ matrix:
       install:
         - R -e 'install.packages("Rcpp")'
         - R -e 'install.packages("rgl")'
+        - R -e 'install.packages("metadynminer")'
         - R -e 'install.packages("misc3d")'
         - R -e 'install.packages("covr")'
         - R -e 'install.packages("testthat")'
