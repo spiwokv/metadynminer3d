@@ -5,8 +5,8 @@
 \title{Plot minima3d object}
 \usage{
 \method{plot}{minima3d}(x, xlim = NULL, ylim = NULL, zlim = NULL,
-  xlab = NULL, ylab = NULL, zlab = NULL, level = NULL,
-  col = NULL, alpha = NULL, fill = TRUE, ...)
+  xlab = "CV1", ylab = "CV2", zlab = "CV3", level = NULL,
+  col = NULL, alpha = NULL, main = NULL, sub = NULL, fill = TRUE, ...)
 }
 \arguments{
 \item{x}{minima3d object.}
