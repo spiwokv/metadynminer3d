@@ -21,8 +21,6 @@ fes.hillsfile3d(hills, imin = 1, imax = NULL, xlim = NULL,
 \item{zlim}{numeric vector of length 2, giving the CV3 coordinates range.}
 
 \item{npoints}{resolution of the free energy surface in number of points.}
-
-\item{x}{lim numeric vector of length 2, giving the CV1 coordinates range.}
 }
 \value{
 fes object.
