@@ -13,6 +13,8 @@ fes.hillsfile3d(hills, imin = 1, imax = NULL, xlim = NULL,
 \item{imin}{index of a hill from which summation starts (default 1).}
 
 \item{imax}{index of a hill from which summation stops (default the rest of hills).}
+  
+\item{xlim}{numeric vector of length 1, giving the CV2 coordinates range.}
 
 \item{ylim}{numeric vector of length 2, giving the CV2 coordinates range.}
 
