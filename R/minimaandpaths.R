@@ -218,7 +218,7 @@ summary.minima3d<-function(object, temp=300, eunit="kJ/mol",...) {
 #' minima<-fesminima(tfes)
 #' plot(minima)
 plot.minima3d <- function(x, xlim=NULL, ylim=NULL, zlim=NULL,
-                    xlab=NULL, ylab=NULL, zlab=NULL,
+                    xlab="CV1", ylab="CV2", zlab="CV3",
                     level=NULL, col=NULL, alpha=NULL,
                     main=NULL, sub=NULL,
                     fill=TRUE,...) {
