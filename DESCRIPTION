@@ -6,7 +6,7 @@ Date: 2019-07-13
 Authors@R: person("Vojtech", "Spiwok", email = "spiwokv@vscht.cz",
                   role = c("aut", "cre"),
                   comment = c(ORCID = "0000-0001-8108-2033"))
-Depends: R (>= 3.3.0), metadynminer
+Depends: R (>= 3.3.0), metadynminer, rgl
 LinkingTo: Rcpp
 Description: Metadynamics is a state of the art biomolecular simulation technique.
   'Plumed' Tribello, G.A. et al. (2014) <doi:10.1016/j.cpc.2013.09.018> program makes
@@ -21,6 +21,6 @@ Description: Metadynamics is a state of the art biomolecular simulation techniqu
 LazyData: true
 License: GPL-3
 RoxygenNote: 6.1.0
-Imports: Rcpp, metadynminer, rgl, misc3d
+Imports: Rcpp, misc3d
 Suggests: testthat
 URL: http://www.metadynamics.cz/metadynminer
