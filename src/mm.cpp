@@ -49,9 +49,9 @@ NumericVector hills3d1(NumericVector cv1, NumericVector cv2, NumericVector cv3, 
     }
   }
   for (int icv=tmin; icv<=tmax; icv++) {
-    cv1i = int(cv1[icv]+0.5);
-    cv2i = int(cv2[icv]+0.5);
-    cv3i = int(cv3[icv]+0.5);
+    cv1i = int(cv1[icv]);
+    cv2i = int(cv2[icv]);
+    cv3i = int(cv3[icv]);
     for (int i = 0; i < n; i++) {
       ni=i-cv1i;
       if(i<cv1i) ni+=2*n;
@@ -134,9 +134,9 @@ NumericVector hills3d1p1(NumericVector cv1, NumericVector cv2, NumericVector cv3
     }
   }
   for (int icv=tmin; icv<=tmax; icv++) {
-    cv1i = int(cv1[icv]+0.5);
-    cv2i = int(cv2[icv]+0.5);
-    cv3i = int(cv3[icv]+0.5);
+    cv1i = int(cv1[icv]);
+    cv2i = int(cv2[icv]);
+    cv3i = int(cv3[icv]);
     for (int i = 0; i < n; i++) {
       ni=i-cv1i;
       if(i<cv1i) ni+=n;
@@ -219,9 +219,9 @@ NumericVector hills3d1p2(NumericVector cv1, NumericVector cv2, NumericVector cv3
     }
   }
   for (int icv=tmin; icv<=tmax; icv++) {
-    cv1i = int(cv1[icv]+0.5);
-    cv2i = int(cv2[icv]+0.5);
-    cv3i = int(cv3[icv]+0.5);
+    cv1i = int(cv1[icv]);
+    cv2i = int(cv2[icv]);
+    cv3i = int(cv3[icv]);
     for (int i = 0; i < n; i++) {
       ni=i-cv1i;
       if(i<cv1i) ni+=2*n;
@@ -304,9 +304,9 @@ NumericVector hills3d1p3(NumericVector cv1, NumericVector cv2, NumericVector cv3
     }
   }
   for (int icv=tmin; icv<=tmax; icv++) {
-    cv1i = int(cv1[icv]+0.5);
-    cv2i = int(cv2[icv]+0.5);
-    cv3i = int(cv3[icv]+0.5);
+    cv1i = int(cv1[icv]);
+    cv2i = int(cv2[icv]);
+    cv3i = int(cv3[icv]);
     for (int i = 0; i < n; i++) {
       ni=i-cv1i;
       if(i<cv1i) ni+=2*n;
@@ -389,9 +389,9 @@ NumericVector hills3d1p12(NumericVector cv1, NumericVector cv2, NumericVector cv
     }
   }
   for (int icv=tmin; icv<=tmax; icv++) {
-    cv1i = int(cv1[icv]+0.5);
-    cv2i = int(cv2[icv]+0.5);
-    cv3i = int(cv3[icv]+0.5);
+    cv1i = int(cv1[icv]);
+    cv2i = int(cv2[icv]);
+    cv3i = int(cv3[icv]);
     for (int i = 0; i < n; i++) {
       ni=i-cv1i;
       if(i<cv1i) ni+=n;
@@ -474,9 +474,9 @@ NumericVector hills3d1p13(NumericVector cv1, NumericVector cv2, NumericVector cv
     }
   }
   for (int icv=tmin; icv<=tmax; icv++) {
-    cv1i = int(cv1[icv]+0.5);
-    cv2i = int(cv2[icv]+0.5);
-    cv3i = int(cv3[icv]+0.5);
+    cv1i = int(cv1[icv]);
+    cv2i = int(cv2[icv]);
+    cv3i = int(cv3[icv]);
     for (int i = 0; i < n; i++) {
       ni=i-cv1i;
       if(i<cv1i) ni+=n;
@@ -559,9 +559,9 @@ NumericVector hills3d1p23(NumericVector cv1, NumericVector cv2, NumericVector cv
     }
   }
   for (int icv=tmin; icv<=tmax; icv++) {
-    cv1i = int(cv1[icv]+0.5);
-    cv2i = int(cv2[icv]+0.5);
-    cv3i = int(cv3[icv]+0.5);
+    cv1i = int(cv1[icv]);
+    cv2i = int(cv2[icv]);
+    cv3i = int(cv3[icv]);
     for (int i = 0; i < n; i++) {
       ni=i-cv1i;
       if(i<cv1i) ni+=2*n;
@@ -644,9 +644,9 @@ NumericVector hills3d1p123(NumericVector cv1, NumericVector cv2, NumericVector c
     }
   }
   for (int icv=tmin; icv<=tmax; icv++) {
-    cv1i = int(cv1[icv]+0.5);
-    cv2i = int(cv2[icv]+0.5);
-    cv3i = int(cv3[icv]+0.5);
+    cv1i = int(cv1[icv]);
+    cv2i = int(cv2[icv]);
+    cv3i = int(cv3[icv]);
     for (int i = 0; i < n; i++) {
       ni=i-cv1i;
       if(i<cv1i) ni+=n;
