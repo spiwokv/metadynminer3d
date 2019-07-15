@@ -459,75 +459,75 @@ fes2.hillsfile3d<-function(hills, imin=1, imax=NULL, xlim=NULL, ylim=NULL, zlim=
     y<-0:(npoints-1)*(ylims[2]-ylims[1])/(npoints-1)+ylims[1]
     z<-0:(npoints-1)*(zlims[2]-zlims[1])/(npoints-1)+zlims[1]
     if((hills$per[1]==F)&(hills$per[2]==F)&(hills$per[3]==F)) {
-      fesm<-hills3d2(npoints*(hills$hillsfile[,2]-xlims[1])/(xlims[2]-xlims[1]),
-                     npoints*(hills$hillsfile[,3]-ylims[1])/(ylims[2]-ylims[1]),
-                     npoints*(hills$hillsfile[,4]-zlims[1])/(zlims[2]-zlims[1]),
-                     npoints*hills$hillsfile[,5]/(xlims[2]-xlims[1]),
-                     npoints*hills$hillsfile[,6]/(ylims[2]-ylims[1]),
-                     npoints*hills$hillsfile[,7]/(zlims[2]-zlims[1]),
+      fesm<-hills3d2((npoints-1)*(hills$hillsfile[,2]-xlims[1])/(xlims[2]-xlims[1]),
+                     (npoints-1)*(hills$hillsfile[,3]-ylims[1])/(ylims[2]-ylims[1]),
+                     (npoints-1)*(hills$hillsfile[,4]-zlims[1])/(zlims[2]-zlims[1]),
+                     (npoints-1)*hills$hillsfile[,5]/(xlims[2]-xlims[1]),
+                     (npoints-1)*hills$hillsfile[,6]/(ylims[2]-ylims[1]),
+                     (npoints-1)*hills$hillsfile[,7]/(zlims[2]-zlims[1]),
                      hills$hillsfile[,8],npoints,imin-1,imax-1)
     }
     if((hills$per[1]==T)&(hills$per[2]==F)&(hills$per[3]==F)) {
-      fesm<-hills3d2p1(npoints*(hills$hillsfile[,2]-xlims[1])/(xlims[2]-xlims[1]),
-                       npoints*(hills$hillsfile[,3]-ylims[1])/(ylims[2]-ylims[1]),
-                       npoints*(hills$hillsfile[,4]-zlims[1])/(zlims[2]-zlims[1]),
-                       npoints*hills$hillsfile[,5]/(xlims[2]-xlims[1]),
-                       npoints*hills$hillsfile[,6]/(ylims[2]-ylims[1]),
-                       npoints*hills$hillsfile[,7]/(zlims[2]-zlims[1]),
+      fesm<-hills3d2p1((npoints-1)*(hills$hillsfile[,2]-xlims[1])/(xlims[2]-xlims[1]),
+                       (npoints-1)*(hills$hillsfile[,3]-ylims[1])/(ylims[2]-ylims[1]),
+                       (npoints-1)*(hills$hillsfile[,4]-zlims[1])/(zlims[2]-zlims[1]),
+                       (npoints-1)*hills$hillsfile[,5]/(xlims[2]-xlims[1]),
+                       (npoints-1)*hills$hillsfile[,6]/(ylims[2]-ylims[1]),
+                       (npoints-1)*hills$hillsfile[,7]/(zlims[2]-zlims[1]),
                        hills$hillsfile[,8],npoints,imin-1,imax-1)
     }
     if((hills$per[1]==F)&(hills$per[2]==T)&(hills$per[3]==F)) {
-      fesm<-hills3d2p2(npoints*(hills$hillsfile[,2]-xlims[1])/(xlims[2]-xlims[1]),
-                       npoints*(hills$hillsfile[,3]-ylims[1])/(ylims[2]-ylims[1]),
-                       npoints*(hills$hillsfile[,4]-zlims[1])/(zlims[2]-zlims[1]),
-                       npoints*hills$hillsfile[,5]/(xlims[2]-xlims[1]),
-                       npoints*hills$hillsfile[,6]/(ylims[2]-ylims[1]),
-                       npoints*hills$hillsfile[,7]/(zlims[2]-zlims[1]),
+      fesm<-hills3d2p2((npoints-1)*(hills$hillsfile[,2]-xlims[1])/(xlims[2]-xlims[1]),
+                       (npoints-1)*(hills$hillsfile[,3]-ylims[1])/(ylims[2]-ylims[1]),
+                       (npoints-1)*(hills$hillsfile[,4]-zlims[1])/(zlims[2]-zlims[1]),
+                       (npoints-1)*hills$hillsfile[,5]/(xlims[2]-xlims[1]),
+                       (npoints-1)*hills$hillsfile[,6]/(ylims[2]-ylims[1]),
+                       (npoints-1)*hills$hillsfile[,7]/(zlims[2]-zlims[1]),
                        hills$hillsfile[,8],npoints,imin-1,imax-1)
     }
     if((hills$per[1]==F)&(hills$per[2]==F)&(hills$per[3]==T)) {
-      fesm<-hills3d2p3(npoints*(hills$hillsfile[,2]-xlims[1])/(xlims[2]-xlims[1]),
-                       npoints*(hills$hillsfile[,3]-ylims[1])/(ylims[2]-ylims[1]),
-                       npoints*(hills$hillsfile[,4]-zlims[1])/(zlims[2]-zlims[1]),
-                       npoints*hills$hillsfile[,5]/(xlims[2]-xlims[1]),
-                       npoints*hills$hillsfile[,6]/(ylims[2]-ylims[1]),
-                       npoints*hills$hillsfile[,7]/(zlims[2]-zlims[1]),
+      fesm<-hills3d2p3((npoints-1)*(hills$hillsfile[,2]-xlims[1])/(xlims[2]-xlims[1]),
+                       (npoints-1)*(hills$hillsfile[,3]-ylims[1])/(ylims[2]-ylims[1]),
+                       (npoints-1)*(hills$hillsfile[,4]-zlims[1])/(zlims[2]-zlims[1]),
+                       (npoints-1)*hills$hillsfile[,5]/(xlims[2]-xlims[1]),
+                       (npoints-1)*hills$hillsfile[,6]/(ylims[2]-ylims[1]),
+                       (npoints-1)*hills$hillsfile[,7]/(zlims[2]-zlims[1]),
                        hills$hillsfile[,8],npoints,imin-1,imax-1)
     }
     if((hills$per[1]==T)&(hills$per[2]==T)&(hills$per[3]==F)) {
-      fesm<-hills3d2p12(npoints*(hills$hillsfile[,2]-xlims[1])/(xlims[2]-xlims[1]),
-                        npoints*(hills$hillsfile[,3]-ylims[1])/(ylims[2]-ylims[1]),
-                        npoints*(hills$hillsfile[,4]-zlims[1])/(zlims[2]-zlims[1]),
-                        npoints*hills$hillsfile[,5]/(xlims[2]-xlims[1]),
-                        npoints*hills$hillsfile[,6]/(ylims[2]-ylims[1]),
-                        npoints*hills$hillsfile[,7]/(zlims[2]-zlims[1]),
+      fesm<-hills3d2p12((npoints-1)*(hills$hillsfile[,2]-xlims[1])/(xlims[2]-xlims[1]),
+                        (npoints-1)*(hills$hillsfile[,3]-ylims[1])/(ylims[2]-ylims[1]),
+                        (npoints-1)*(hills$hillsfile[,4]-zlims[1])/(zlims[2]-zlims[1]),
+                        (npoints-1)*hills$hillsfile[,5]/(xlims[2]-xlims[1]),
+                        (npoints-1)*hills$hillsfile[,6]/(ylims[2]-ylims[1]),
+                        (npoints-1)*hills$hillsfile[,7]/(zlims[2]-zlims[1]),
                         hills$hillsfile[,8],npoints,imin-1,imax-1)
     }
     if((hills$per[1]==T)&(hills$per[2]==F)&(hills$per[3]==T)) {
-      fesm<-hills3d2p13(npoints*(hills$hillsfile[,2]-xlims[1])/(xlims[2]-xlims[1]),
-                        npoints*(hills$hillsfile[,3]-ylims[1])/(ylims[2]-ylims[1]),
-                        npoints*(hills$hillsfile[,4]-zlims[1])/(zlims[2]-zlims[1]),
-                        npoints*hills$hillsfile[,5]/(xlims[2]-xlims[1]),
-                        npoints*hills$hillsfile[,6]/(ylims[2]-ylims[1]),
-                        npoints*hills$hillsfile[,7]/(zlims[2]-zlims[1]),
+      fesm<-hills3d2p13((npoints-1)*(hills$hillsfile[,2]-xlims[1])/(xlims[2]-xlims[1]),
+                        (npoints-1)*(hills$hillsfile[,3]-ylims[1])/(ylims[2]-ylims[1]),
+                        (npoints-1)*(hills$hillsfile[,4]-zlims[1])/(zlims[2]-zlims[1]),
+                        (npoints-1)*hills$hillsfile[,5]/(xlims[2]-xlims[1]),
+                        (npoints-1)*hills$hillsfile[,6]/(ylims[2]-ylims[1]),
+                        (npoints-1)*hills$hillsfile[,7]/(zlims[2]-zlims[1]),
                         hills$hillsfile[,8],npoints,imin-1,imax-1)
     }
     if((hills$per[1]==F)&(hills$per[2]==T)&(hills$per[3]==T)) {
-      fesm<-hills3d2p23(npoints*(hills$hillsfile[,2]-xlims[1])/(xlims[2]-xlims[1]),
-                        npoints*(hills$hillsfile[,3]-ylims[1])/(ylims[2]-ylims[1]),
-                        npoints*(hills$hillsfile[,4]-zlims[1])/(zlims[2]-zlims[1]),
-                        npoints*hills$hillsfile[,5]/(xlims[2]-xlims[1]),
-                        npoints*hills$hillsfile[,6]/(ylims[2]-ylims[1]),
-                        npoints*hills$hillsfile[,7]/(zlims[2]-zlims[1]),
+      fesm<-hills3d2p23((npoints-1)*(hills$hillsfile[,2]-xlims[1])/(xlims[2]-xlims[1]),
+                        (npoints-1)*(hills$hillsfile[,3]-ylims[1])/(ylims[2]-ylims[1]),
+                        (npoints-1)*(hills$hillsfile[,4]-zlims[1])/(zlims[2]-zlims[1]),
+                        (npoints-1)*hills$hillsfile[,5]/(xlims[2]-xlims[1]),
+                        (npoints-1)*hills$hillsfile[,6]/(ylims[2]-ylims[1]),
+                        (npoints-1)*hills$hillsfile[,7]/(zlims[2]-zlims[1]),
                         hills$hillsfile[,8],npoints,imin-1,imax-1)
     }
     if((hills$per[1]==T)&(hills$per[2]==T)&(hills$per[3]==T)) {
-      fesm<-hills3d2p123(npoints*(hills$hillsfile[,2]-xlims[1])/(xlims[2]-xlims[1]),
-                         npoints*(hills$hillsfile[,3]-ylims[1])/(ylims[2]-ylims[1]),
-                         npoints*(hills$hillsfile[,4]-zlims[1])/(zlims[2]-zlims[1]),
-                         npoints*hills$hillsfile[,5]/(xlims[2]-xlims[1]),
-                         npoints*hills$hillsfile[,6]/(ylims[2]-ylims[1]),
-                         npoints*hills$hillsfile[,7]/(zlims[2]-zlims[1]),
+      fesm<-hills3d2p123((npoints-1)*(hills$hillsfile[,2]-xlims[1])/(xlims[2]-xlims[1]),
+                         (npoints-1)*(hills$hillsfile[,3]-ylims[1])/(ylims[2]-ylims[1]),
+                         (npoints-1)*(hills$hillsfile[,4]-zlims[1])/(zlims[2]-zlims[1]),
+                         (npoints-1)*hills$hillsfile[,5]/(xlims[2]-xlims[1]),
+                         (npoints-1)*hills$hillsfile[,6]/(ylims[2]-ylims[1]),
+                         (npoints-1)*hills$hillsfile[,7]/(zlims[2]-zlims[1]),
                          hills$hillsfile[,8],npoints,imin-1,imax-1)
     }
     fesm<-aperm(array(fesm, c(npoints, npoints, npoints)))
