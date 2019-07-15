@@ -1,4 +1,4 @@
 library(testthat)
-library(metadynminer)
+library(metadynminer3d)
 
 test_check("metadynminer")
