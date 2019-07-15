@@ -4,7 +4,7 @@
 \alias{plot.hillsfile3d}
 \title{Plot hillsfile3d object}
 \usage{
-\method{plot}{hillsfile3d}(x, xlab = NULL, ylab = NULL, zlab = NULL,
+\method{plot}{hillsfile3d}(x, xlab = "CV1", ylab = "CV2", zlab = "CV3",
   xlim = NULL, ylim = NULL, zlim = NULL, main = NULL, sub = NULL,
   col = "orange", ...)
 }
