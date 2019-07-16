@@ -745,7 +745,7 @@ plot.fes3d<-function(x, xlim=NULL, ylim=NULL, zlim=NULL,
                      xlab=NULL, ylab=NULL, zlab=NULL,
                      level=NULL, col=NULL, alpha=NULL,
                      main=NULL, sub=NULL,
-                     fill=T,...) {
+                     fill=TRUE,...) {
   close.screen(all.screens=TRUE)
   inputfes<-x
   fes<-inputfes$fes
