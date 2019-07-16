@@ -6,7 +6,7 @@
 \usage{
 \method{plot}{fes3d}(x, xlim = NULL, ylim = NULL, zlim = NULL,
   xlab = NULL, ylab = NULL, zlab = NULL, level = NULL,
-  col = NULL, alpha = NULL, main = NULL, sub = NULL, fill = T, ...)
+  col = NULL, alpha = NULL, main = NULL, sub = NULL, fill = TRUE, ...)
 }
 \arguments{
 \item{x}{fes3d object.}
