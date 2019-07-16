@@ -4,7 +4,7 @@
 \alias{fesminima.fes3d}
 \title{Find free energy minima in the fes3d object}
 \usage{
-fesminima.fes3d(inputfes, nbins = 8)
+\method{fesminima}{fes3d}(inputfes, nbins = 8)
 }
 \arguments{
 \item{inputfes}{fes3d object.}
