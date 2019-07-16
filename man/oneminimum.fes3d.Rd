@@ -24,7 +24,7 @@ This can be used to calculate 3D free energy surface evolution at arbitrary
 point of free energy surface.
 }
 \examples{
-tfes<-fes(acealanme3d)
+tfes<-fes(acealanme3d, imax=1000)
 minima<-fesminima(tfes)
 minima<-minima+oneminimum(tfes, cv1=0, cv2=0, cv3=0)
 minima
