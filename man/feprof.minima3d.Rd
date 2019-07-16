@@ -18,6 +18,7 @@ free energies of a local vs. the global free energy minimum. The free
 energy of the global minimum is constant (zero).
 }
 \examples{
+library(metadynminer3d)
 tfes<-fes(acealanme3d, imax=5000)
 minima<-fesminima(tfes)
 prof<-feprof(minima)
