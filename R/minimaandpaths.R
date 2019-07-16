@@ -214,7 +214,7 @@ summary.minima3d<-function(object, temp=300, eunit="kJ/mol",...) {
 #'
 #' @export
 #' @examples
-#' tfes<-fes(acealanme, imax=5000)
+#' tfes<-fes(acealanme3d, imax=5000)
 #' minima<-fesminima(tfes)
 #' plot(minima)
 plot.minima3d <- function(x, xlim=NULL, ylim=NULL, zlim=NULL,
