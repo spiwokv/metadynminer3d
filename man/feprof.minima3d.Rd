@@ -4,7 +4,7 @@
 \alias{feprof.minima3d}
 \title{Calculate free energy profile for minima3d object}
 \usage{
-feprof.minima3d(minims, imax = NULL)
+\method{feprof}{minima3d}(minims, imax = NULL)
 }
 \arguments{
 \item{minims}{minima3d object.}
