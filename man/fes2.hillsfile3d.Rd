@@ -4,7 +4,7 @@
 \alias{fes2.hillsfile3d}
 \title{Calculate 3D free energy surface by conventional algorithm}
 \usage{
-fes2.hillsfile3d(hills, imin = 1, imax = NULL, xlim = NULL,
+\method{fes2}{hillsfile3d}(hills, imin = 1, imax = NULL, xlim = NULL,
   ylim = NULL, zlim = NULL, npoints = NULL)
 }
 \arguments{
