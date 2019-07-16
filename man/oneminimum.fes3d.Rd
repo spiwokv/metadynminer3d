@@ -4,7 +4,7 @@
 \alias{oneminimum.fes3d}
 \title{Creates one ad hoc 3D free energy minimum for a fes object}
 \usage{
-oneminimum.fes3d(inputfes, cv1, cv2, cv3)
+\method{oneminimum}{fes3d}(inputfes, cv1, cv2, cv3)
 }
 \arguments{
 \item{inputfes}{fes3d object.}
