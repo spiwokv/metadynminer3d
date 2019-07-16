@@ -45,7 +45,7 @@ solid surface (True) or wireframe (False).}
 way as by plot.fes3d with additional minima labels.
 }
 \examples{
-tfes<-fes(acealanme, imax=5000)
+tfes<-fes(acealanme3d, imax=5000)
 minima<-fesminima(tfes)
 plot(minima)
 }
