@@ -4,7 +4,7 @@
 \alias{plotheights.hillsfile3d}
 \title{Plot evolution of heights of hills in hillsfile3d object}
 \usage{
-plotheights.hillsfile3d(hills, ignoretime = FALSE, xlab = NULL,
+\method{plotheights}{hillsfile3d}(hills, ignoretime = FALSE, xlab = NULL,
   ylab = NULL, xlim = NULL, ylim = NULL, main = NULL, sub = NULL,
   col = "black", asp = NULL, lwd = 1, axes = TRUE)
 }
