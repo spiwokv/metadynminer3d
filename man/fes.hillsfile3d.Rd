@@ -4,7 +4,7 @@
 \alias{fes.hillsfile3d}
 \title{Calculate 3D free energy surface by Bias Sum algorithm}
 \usage{
-fes.hillsfile3d(hills, imin = 1, imax = NULL, xlim = NULL,
+\method{fes}{hillsfile3d}(hills, imin = 1, imax = NULL, xlim = NULL,
   ylim = NULL, zlim = NULL, npoints = NULL)
 }
 \arguments{
