@@ -4,7 +4,7 @@
 \alias{read.plumed3d}
 \title{Read 3D free energy surface from PLUMED sum_hills}
 \usage{
-read.plumed(file = "fes.dat", per = c(F, F, F))
+read.plumed3d(file = "fes.dat", per = c(F, F, F))
 }
 \arguments{
 \item{file}{input file from PLUMED sum_hills.}
