@@ -8,13 +8,13 @@ test_that("Testing that read.hills3d correctly loads hills and ralated functions
   fourhills<-c(l1,l2,l3,l4)
   tf <- tempfile()
   writeLines(fourhills, tf)
-  h<-read.hills3d(tf, per=c(TRUE,TRUE))
+  h<-read.hills3d(tf, per=c(TRUE,TRUE,TRUE))
   myfes<-fes(h)
   summyfes<-sum(myfes$fes)
   expect_equal(object=summyfes, expected=-4097, tolerance=1, scale=1)
   
   # +
-  h<-read.hills3d(tf, per=c(TRUE,TRUE))
+  h<-read.hills3d(tf, per=c(TRUE,TRUE,TRUE))
   h2<-h+h
   myfes<-fes(h2)
   summyfes<-sum(myfes$fes)
