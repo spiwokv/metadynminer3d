@@ -44,7 +44,7 @@ test_that("Testing that fesminima correctly identifies energy minima", {
   myfes<-fes(acealanme2, imax=1000)
   mins<-fesminima(myfes)
   minA <- summary(mins)[1,8]
-  expect_equal(object=minA, expected=-2.5, tolerance=0.1, scale=1)
+  expect_equal(object=minA, expected=-8.7, tolerance=0.1, scale=1)
   
   # fesminima 3D with per=c(T,F,T)
   acealanme2<-acealanme3d
@@ -52,7 +52,7 @@ test_that("Testing that fesminima correctly identifies energy minima", {
   myfes<-fes(acealanme2, imax=1000)
   mins<-fesminima(myfes)
   minA <- summary(mins)[1,8]
-  expect_equal(object=minA, expected=-8.7, tolerance=0.1, scale=1)
+  expect_equal(object=minA, expected=-6.0, tolerance=0.1, scale=1)
   
   # fesminima 3D with per=c(F,T,T)
   acealanme2<-acealanme3d
@@ -60,7 +60,7 @@ test_that("Testing that fesminima correctly identifies energy minima", {
   myfes<-fes(acealanme2, imax=1000)
   mins<-fesminima(myfes)
   minA <- summary(mins)[1,8]
-  expect_equal(object=minA, expected=-6.0, tolerance=0.1, scale=1)
+  expect_equal(object=minA, expected=-7.0, tolerance=0.1, scale=1)
   
   # feprof and summary 3D
   myfes<-fes(acealanme3d, imax=1000)
