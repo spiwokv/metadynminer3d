@@ -376,7 +376,7 @@ NumericVector hills3d1p12(NumericVector cv1, NumericVector cv2, NumericVector cv
         if(i>0) g[n-i][j][k] = z;
         if((i>0)&&(j>0)) g[n-i][n-j][k] = z;
         if((i>0)&&(k>0)) g[n-i][j][2*n-k] = z;
-        if((j>0)&&(k>0)) g[i][n-j][n-k] = z;
+        if((j>0)&&(k>0)) g[i][n-j][2*n-k] = z;
         if((i>0)&&(j>0)&&(k>0)) g[n-i][n-j][2*n-k] = z;
       }
     }
