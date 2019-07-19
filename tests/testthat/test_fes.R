@@ -53,7 +53,7 @@ test_that("Testing that fes.hills3d calculates correctly sum of points", {
   acealanme2$per <- c(T,T,F)
   myfes<-fes(acealanme2, imax=1000)
   summyfes<-sum(myfes$fes)
-  expect_equal(object=summyfes, expected=-35146, tolerance=1, scale=1)
+  expect_equal(object=summyfes, expected=-46597, tolerance=1, scale=1)
   
   # fes function 3D with per=c(T,F,T)
   acealanme2 <- acealanme3d
