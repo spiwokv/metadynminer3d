@@ -49,7 +49,7 @@ fesminima.fes3d<-function(inputfes, nbins=8) {
       }
       for(k in 0:(nbins-1)) {
         nk<-k*rb+0:(rb+1)
-        if(per[2]) {
+        if(per[3]) {
           nk[nk==0]<-rows
           nk[nk==(rows+1)]<-1
         } else {
