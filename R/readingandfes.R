@@ -829,7 +829,8 @@ plot.fes3d<-function(x, xlim=NULL, ylim=NULL, zlim=NULL,
     if(is.null(col)) col<-"orange"
     if(is.null(alpha)) alpha<-1
   }
-  contour3d(f=fes, level=level, x=x, y=y, z=z, 
+  contour3d(f=fes, level=level, x=x, y=y, z=z,
+            xlim=xlim, ylim=ylim, zlim=zlim,
             color=col, alpha=alpha, fill=fill)
   axes3d()
   title3d(xlab=xlab, ylab=ylab, zlab=zlab, main=main, sub=sub)
