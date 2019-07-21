@@ -179,16 +179,9 @@ tail.hillsfile3d<-function(x, n=10,...) {
 #' plot(acealanme3d)
 plot.hillsfile3d<-function(x,
                            xlab="CV1", ylab="CV2", zlab="CV3",
-                           xlim=NULL, ylim=NULL, zlim=NULL,
                            main=NULL, sub=NULL,
                            col="orange",...) {
   hills <-x
-  xlims<-NULL
-  ylims<-NULL
-  zlims<-NULL
-  if(!is.null(xlim)) {xlims<-xlim}
-  if(!is.null(ylim)) {ylims<-ylim}
-  if(!is.null(zlim)) {zlims<-zlim}
   points3d(hills$hillsfile[,2:4], col=col)
   axes3d()
   title3d(xlab=xlab, ylab=ylab, zlab=zlab,
