@@ -5,8 +5,7 @@
 \title{Plot hillsfile3d object}
 \usage{
 \method{plot}{hillsfile3d}(x, xlab = "CV1", ylab = "CV2", zlab = "CV3",
-  xlim = NULL, ylim = NULL, zlim = NULL, main = NULL, sub = NULL,
-  col = "orange", ...)
+  main = NULL, sub = NULL, col = "orange", ...)
 }
 \arguments{
 \item{x}{hillsfile object.}
@@ -16,12 +15,6 @@
 \item{ylab}{a title for the y axis: see 'title'.}
 
 \item{zlab}{a title for the z axis: see 'title'.}
-
-\item{xlim}{numeric vector of length 2, giving the x coordinates range.}
-
-\item{ylim}{numeric vector of length 2, giving the y coordinates range.}
-
-\item{zlim}{numeric vector of length 2, giving the z coordinates range.}
 
 \item{main}{an overall title for the plot: see 'title'.}
 
