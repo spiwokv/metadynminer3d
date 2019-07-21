@@ -803,8 +803,7 @@ summary.fes3d<-function(object,...) {
 #' @examples
 #' tfes3d<-fes(acealanme3d, imax=5000)
 #' plot(tfes3d)
-plot.fes3d<-function(x, xlim=NULL, ylim=NULL, zlim=NULL,
-                     xlab=NULL, ylab=NULL, zlab=NULL,
+plot.fes3d<-function(x, xlab=NULL, ylab=NULL, zlab=NULL,
                      level=NULL, col=NULL, alpha=NULL,
                      main=NULL, sub=NULL,
                      fill=TRUE,...) {
@@ -830,7 +829,6 @@ plot.fes3d<-function(x, xlim=NULL, ylim=NULL, zlim=NULL,
     if(is.null(alpha)) alpha<-1
   }
   contour3d(f=fes, level=level, x=x, y=y, z=z,
-            xlim=xlim, ylim=ylim, zlim=zlim,
             color=col, alpha=alpha, fill=fill)
   axes3d()
   title3d(xlab=xlab, ylab=ylab, zlab=zlab, main=main, sub=sub)
