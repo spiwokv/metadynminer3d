@@ -789,9 +789,6 @@ summary.fes3d<-function(object,...) {
 #'        or a vector with multiple colors for multiple 3D isosurfaces.
 #' @param alpha number or numeric vector of alpha levels (transparency) of
 #'        3D isosurfaces.
-#' @param xlim numeric vector of length 2, giving the x coordinates range.
-#' @param ylim numeric vector of length 2, giving the y coordinates range.
-#' @param zlim numeric vector of length 2, giving the z coordinates range.
 #' @param main an overall title for the plot: see 'title'.
 #' @param sub a sub title for the plot: see 'title'.
 #' @param level number or numeric vector of levels at which to draw 3D isosurface.
