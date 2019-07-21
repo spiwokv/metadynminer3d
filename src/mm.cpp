@@ -751,8 +751,8 @@ NumericVector hills3d2p1(NumericVector cv1, NumericVector cv2, NumericVector cv3
       for (int j = 0; j < n; j++) {
         for (int k = 0; k < n; k++) {
           dcv1 = cv1[icv]-double(i);
-          if(dcv1 >  double(n)/2.0) dcv1 -= double(n);
-          if(dcv1 < -double(n)/2.0) dcv1 += double(n);
+          if(dcv1 >  double(n)/2.0) dcv1 -= double(n-1);
+          if(dcv1 < -double(n)/2.0) dcv1 += double(n-1);
           dcv2 = cv2[icv]-double(j);
           dcv3 = cv3[icv]-double(k);
           v[i][j][k] -= heights[icv]*exp(-dcv1*dcv1/2.0/width1[icv]/width1[icv]-dcv2*dcv2/2.0/width2[icv]/width2[icv]-dcv3*dcv3/2.0/width3[icv]/width3[icv]);
@@ -800,8 +800,8 @@ NumericVector hills3d2p2(NumericVector cv1, NumericVector cv2, NumericVector cv3
         for (int k = 0; k < n; k++) {
           dcv1 = cv1[icv]-double(i);
           dcv2 = cv2[icv]-double(j);
-          if(dcv2 >  double(n)/2.0) dcv2 -= double(n);
-          if(dcv2 < -double(n)/2.0) dcv2 += double(n);
+          if(dcv2 >  double(n)/2.0) dcv2 -= double(n-1);
+          if(dcv2 < -double(n)/2.0) dcv2 += double(n-1);
           dcv3 = cv3[icv]-double(k);
           v[i][j][k] -= heights[icv]*exp(-dcv1*dcv1/2.0/width1[icv]/width1[icv]-dcv2*dcv2/2.0/width2[icv]/width2[icv]-dcv3*dcv3/2.0/width3[icv]/width3[icv]);
         }
@@ -849,8 +849,8 @@ NumericVector hills3d2p3(NumericVector cv1, NumericVector cv2, NumericVector cv3
           dcv1 = cv1[icv]-double(i);
           dcv2 = cv2[icv]-double(j);
           dcv3 = cv3[icv]-double(k);
-          if(dcv3 >  double(n)/2.0) dcv3 -= double(n);
-          if(dcv3 < -double(n)/2.0) dcv3 += double(n);
+          if(dcv3 >  double(n)/2.0) dcv3 -= double(n-1);
+          if(dcv3 < -double(n)/2.0) dcv3 += double(n-1);
           v[i][j][k] -= heights[icv]*exp(-dcv1*dcv1/2.0/width1[icv]/width1[icv]-dcv2*dcv2/2.0/width2[icv]/width2[icv]-dcv3*dcv3/2.0/width3[icv]/width3[icv]);
         }
       }
@@ -895,11 +895,11 @@ NumericVector hills3d2p12(NumericVector cv1, NumericVector cv2, NumericVector cv
       for (int j = 0; j < n; j++) {
         for (int k = 0; k < n; k++) {
           dcv1 = cv1[icv]-double(i);
-          if(dcv1 >  double(n)/2.0) dcv1 -= double(n);
-          if(dcv1 < -double(n)/2.0) dcv1 += double(n);
+          if(dcv1 >  double(n)/2.0) dcv1 -= double(n-1);
+          if(dcv1 < -double(n)/2.0) dcv1 += double(n-1);
           dcv2 = cv2[icv]-double(j);
-          if(dcv2 >  double(n)/2.0) dcv2 -= double(n);
-          if(dcv2 < -double(n)/2.0) dcv2 += double(n);
+          if(dcv2 >  double(n)/2.0) dcv2 -= double(n-1);
+          if(dcv2 < -double(n)/2.0) dcv2 += double(n-1);
           dcv3 = cv3[icv]-double(k);
           v[i][j][k] -= heights[icv]*exp(-dcv1*dcv1/2.0/width1[icv]/width1[icv]-dcv2*dcv2/2.0/width2[icv]/width2[icv]-dcv3*dcv3/2.0/width3[icv]/width3[icv]);
         }
@@ -945,12 +945,12 @@ NumericVector hills3d2p13(NumericVector cv1, NumericVector cv2, NumericVector cv
       for (int j = 0; j < n; j++) {
         for (int k = 0; k < n; k++) {
           dcv1 = cv1[icv]-double(i);
-          if(dcv1 >  double(n)/2.0) dcv1 -= double(n);
-          if(dcv1 < -double(n)/2.0) dcv1 += double(n);
+          if(dcv1 >  double(n)/2.0) dcv1 -= double(n-1);
+          if(dcv1 < -double(n)/2.0) dcv1 += double(n-1);
           dcv2 = cv2[icv]-double(j);
           dcv3 = cv3[icv]-double(k);
-          if(dcv3 >  double(n)/2.0) dcv3 -= double(n);
-          if(dcv3 < -double(n)/2.0) dcv3 += double(n);
+          if(dcv3 >  double(n)/2.0) dcv3 -= double(n-1);
+          if(dcv3 < -double(n)/2.0) dcv3 += double(n-1);
           v[i][j][k] -= heights[icv]*exp(-dcv1*dcv1/2.0/width1[icv]/width1[icv]-dcv2*dcv2/2.0/width2[icv]/width2[icv]-dcv3*dcv3/2.0/width3[icv]/width3[icv]);
         }
       }
@@ -996,11 +996,11 @@ NumericVector hills3d2p23(NumericVector cv1, NumericVector cv2, NumericVector cv
         for (int k = 0; k < n; k++) {
           dcv1 = cv1[icv]-double(i);
           dcv2 = cv2[icv]-double(j);
-          if(dcv2 >  double(n)/2.0) dcv2 -= double(n);
-          if(dcv2 < -double(n)/2.0) dcv2 += double(n);
+          if(dcv2 >  double(n)/2.0) dcv2 -= double(n-1);
+          if(dcv2 < -double(n)/2.0) dcv2 += double(n-1);
           dcv3 = cv3[icv]-double(k);
-          if(dcv3 >  double(n)/2.0) dcv3 -= double(n);
-          if(dcv3 < -double(n)/2.0) dcv3 += double(n);
+          if(dcv3 >  double(n)/2.0) dcv3 -= double(n-1);
+          if(dcv3 < -double(n)/2.0) dcv3 += double(n-1);
           v[i][j][k] -= heights[icv]*exp(-dcv1*dcv1/2.0/width1[icv]/width1[icv]-dcv2*dcv2/2.0/width2[icv]/width2[icv]-dcv3*dcv3/2.0/width3[icv]/width3[icv]);
         }
       }
@@ -1045,14 +1045,14 @@ NumericVector hills3d2p123(NumericVector cv1, NumericVector cv2, NumericVector c
       for (int j = 0; j < n; j++) {
         for (int k = 0; k < n; k++) {
           dcv1 = cv1[icv]-double(i);
-          if(dcv1 >  double(n)/2.0) dcv1 -= double(n);
-          if(dcv1 < -double(n)/2.0) dcv1 += double(n);
+          if(dcv1 >  double(n)/2.0) dcv1 -= double(n-1);
+          if(dcv1 < -double(n)/2.0) dcv1 += double(n-1);
           dcv2 = cv2[icv]-double(j);
-          if(dcv2 >  double(n)/2.0) dcv2 -= double(n);
-          if(dcv2 < -double(n)/2.0) dcv2 += double(n);
+          if(dcv2 >  double(n)/2.0) dcv2 -= double(n-1);
+          if(dcv2 < -double(n)/2.0) dcv2 += double(n-1);
           dcv3 = cv3[icv]-double(k);
-          if(dcv3 >  double(n)/2.0) dcv3 -= double(n);
-          if(dcv3 < -double(n)/2.0) dcv3 += double(n);
+          if(dcv3 >  double(n)/2.0) dcv3 -= double(n-1);
+          if(dcv3 < -double(n)/2.0) dcv3 += double(n-1);
           v[i][j][k] -= heights[icv]*exp(-dcv1*dcv1/2.0/width1[icv]/width1[icv]-dcv2*dcv2/2.0/width2[icv]/width2[icv]-dcv3*dcv3/2.0/width3[icv]/width3[icv]);
         }
       }
