@@ -112,8 +112,8 @@ NumericVector hills3d1p1(NumericVector cv1, NumericVector cv2, NumericVector cv3
     }
   }
   for (int i = 0; i < n/2; i++) {
-    for (int j = 0; j < 2*n; j++) {
-      for (int k = 0; k < 2*n; k++) {
+    for (int j = 0; j < n; j++) {
+      for (int k = 0; k < n; k++) {
         z = exp(-double(i)*double(i)/2.0/width1/width1-double(j)*double(j)/2.0/width2/width2-double(k)*double(k)/2.0/width3/width3);
         g[i][j][k] = z;
         if(k>0) g[i][j][2*n-k] = z;
@@ -196,9 +196,9 @@ NumericVector hills3d1p2(NumericVector cv1, NumericVector cv2, NumericVector cv3
       }
     }
   }
-  for (int i = 0; i < 2*n; i++) {
+  for (int i = 0; i < n; i++) {
     for (int j = 0; j < n/2; j++) {
-      for (int k = 0; k < 2*n; k++) {
+      for (int k = 0; k < n; k++) {
         z = exp(-double(i)*double(i)/2.0/width1/width1-double(j)*double(j)/2.0/width2/width2-double(k)*double(k)/2.0/width3/width3);
         g[i][j][k] = z;
         if(k>0) g[i][j][2*n-k] = z;
@@ -281,8 +281,8 @@ NumericVector hills3d1p3(NumericVector cv1, NumericVector cv2, NumericVector cv3
       }
     }
   }
-  for (int i = 0; i < 2*n; i++) {
-    for (int j = 0; j < 2*n; j++) {
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) {
       for (int k = 0; k < n/2; k++) {
         z = exp(-double(i)*double(i)/2.0/width1/width1-double(j)*double(j)/2.0/width2/width2-double(k)*double(k)/2.0/width3/width3);
         g[i][j][k] = z;
@@ -368,7 +368,7 @@ NumericVector hills3d1p12(NumericVector cv1, NumericVector cv2, NumericVector cv
   }
   for (int i = 0; i < n/2; i++) {
     for (int j = 0; j < n/2; j++) {
-      for (int k = 0; k < 2*n; k++) {
+      for (int k = 0; k < n; k++) {
         z = exp(-double(i)*double(i)/2.0/width1/width1-double(j)*double(j)/2.0/width2/width2-double(k)*double(k)/2.0/width3/width3);
         g[i][j][k] = z;
         if(k>0) g[i][j][2*n-k] = z;
@@ -452,7 +452,7 @@ NumericVector hills3d1p13(NumericVector cv1, NumericVector cv2, NumericVector cv
     }
   }
   for (int i = 0; i < n/2; i++) {
-    for (int j = 0; j < 2*n; j++) {
+    for (int j = 0; j < n; j++) {
       for (int k = 0; k < n/2; k++) {
         z = exp(-double(i)*double(i)/2.0/width1/width1-double(j)*double(j)/2.0/width2/width2-double(k)*double(k)/2.0/width3/width3);
         g[i][j][k] = z;
@@ -536,7 +536,7 @@ NumericVector hills3d1p23(NumericVector cv1, NumericVector cv2, NumericVector cv
       }
     }
   }
-  for (int i = 0; i < 2*n; i++) {
+  for (int i = 0; i < n; i++) {
     for (int j = 0; j < n/2; j++) {
       for (int k = 0; k < n/2; k++) {
         z = exp(-double(i)*double(i)/2.0/width1/width1-double(j)*double(j)/2.0/width2/width2-double(k)*double(k)/2.0/width3/width3);
