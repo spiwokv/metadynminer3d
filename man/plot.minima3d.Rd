@@ -4,18 +4,11 @@
 \alias{plot.minima3d}
 \title{Plot minima3d object}
 \usage{
-\method{plot}{minima3d}(x, xlim = NULL, ylim = NULL, zlim = NULL,
-  xlab = "CV1", ylab = "CV2", zlab = "CV3", level = NULL,
+\method{plot}{minima3d}(x, xlab = "CV1", ylab = "CV2", zlab = "CV3", level = NULL,
   col = NULL, alpha = NULL, main = NULL, sub = NULL, fill = TRUE, ...)
 }
 \arguments{
 \item{x}{minima3d object.}
-
-\item{xlim}{numeric vector of length 2, giving the x coordinates range.}
-
-\item{ylim}{numeric vector of length 2, giving the y coordinates range.}
-
-\item{zlim}{numeric vector of length 2, giving the z coordinates range.}
 
 \item{main}{an overall title for the plot: see 'title'.}
 
