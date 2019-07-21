@@ -204,9 +204,6 @@ summary.minima3d<-function(object, temp=300, eunit="kJ/mol",...) {
 #'        or a vector with multiple colors for multiple 3D isosurfaces.
 #' @param alpha number or numeric vector of alpha levels (transparency) of
 #'        3D isosurfaces.
-#' @param xlim numeric vector of length 2, giving the x coordinates range.
-#' @param ylim numeric vector of length 2, giving the y coordinates range.
-#' @param zlim numeric vector of length 2, giving the z coordinates range.
 #' @param level number or numeric vector of levels at which to draw 3D isosurface.
 #' @param fill a logical value indicating whether 3D isosurface is ploted as
 #'        solid surface (True) or wireframe (False).
@@ -217,8 +214,7 @@ summary.minima3d<-function(object, temp=300, eunit="kJ/mol",...) {
 #' tfes<-fes(acealanme3d, imax=5000)
 #' minima<-fesminima(tfes)
 #' plot(minima)
-plot.minima3d <- function(x, xlim=NULL, ylim=NULL, zlim=NULL,
-                    xlab="CV1", ylab="CV2", zlab="CV3",
+plot.minima3d <- function(x, xlab="CV1", ylab="CV2", zlab="CV3",
                     level=NULL, col=NULL, alpha=NULL,
                     main=NULL, sub=NULL,
                     fill=TRUE,...) {
