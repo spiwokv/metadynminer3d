@@ -27,7 +27,7 @@ devtools::install_github("spiwokv/metadynminer3d")
 # Load library
 library(metadynminer3d)
 # Read hills file
-hillsf<-read.hills("HILLS", per=c(TRUE, TRUE, TRUE)) # HILLS with periodicity on CV1, CV2 and CV3
+hillsf<-read.hills3d("HILLS", per=c(TRUE, TRUE, TRUE)) # HILLS with periodicity on CV1, CV2 and CV3
 
 # Sum two hills files
 hillsf+hillsf
