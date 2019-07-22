@@ -16,8 +16,8 @@ Description: Metadynamics is a state of the art biomolecular simulation techniqu
   As an addendum, 'metadynaminer3d' is used to visualize 3D hills. It uses
   a fast algorithm by Hosek, P. and Spiwok, V. (2016) <doi:10.1016/j.cpc.2015.08.037>
   to calculate a free energy surface from hills. Minima can be located and plotted on
-  the free energy surface. Free energy surfaces, minima and transition paths can be
-  plotted to produce publication quality images.
+  the free energy surface. Free energy surfaces and minima can be plotted to produce
+  publication quality images.
 LazyData: true
 License: GPL-3
 RoxygenNote: 6.1.0
