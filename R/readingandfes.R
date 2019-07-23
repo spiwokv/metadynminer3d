@@ -413,7 +413,7 @@ fes.hillsfile3d<-function(hills, imin=1, imax=NULL, xlim=NULL, ylim=NULL, zlim=N
 #'
 #' @export
 #' @examples
-#' tfes<-fes2(acealanme3d, imax=1000)
+#' tfes<-fes2(acealanme3d, imax=100)
 fes2.hillsfile3d<-function(hills, imin=1, imax=NULL, xlim=NULL, ylim=NULL, zlim=NULL, npoints=NULL) {
   if(!is.null(imax)) {
     if(hills$size[1]<imax) {
