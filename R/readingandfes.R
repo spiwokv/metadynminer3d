@@ -31,14 +31,13 @@ NULL
 read.hills3d<-function(file="HILLS", per=c(FALSE, FALSE, FALSE), pcv1=c(-pi,pi), pcv2=c(-pi,pi), pcv3=c(-pi,pi), ignoretime=FALSE) {
   hillsf<-read.table(file, header=F, comment.char="#")
   if(ncol(hillsf)==5 || ncol(hillsf)==6) {
-    cat("looks like you trying to load 1D HILLS, use read.hills from metadynminer\n")
+    warning("looks like you trying to load 1D HILLS, use read.hills from metadynminer\n")
   } else if(ncol(hillsf)==7 || ncol(hillsf)==8) {
-    cat("looks like you trying to load 2D HILLS, use read.hills from metadynminer\n")
+    warning("looks like you trying to load 2D HILLS, use read.hills from metadynminer\n")
   } else if(ncol(hillsf)==9 || ncol(hillsf)==10) {
-    cat("3D HILLS file read\n")
+    warning("3D HILLS file read\n")
     if(ignoretime) {
-      cat("Warning: The time will be updated automatically from zero\n")
-      cat("according to the first step!\n")
+      warning("Warning: The time will be updated automatically from zero according to the first step!\n")
       hillsf[,1]<-seq(from=hillsf[1,1], by=hillsf[1,1], length.out=nrow(hillsf))
     }
     hills<-list(hillsfile=hillsf, time=hillsf[,1], cv1=hillsf[,2], cv2=hillsf[,3], cv3=hillsf[,4],
@@ -62,11 +61,11 @@ read.hills3d<-function(file="HILLS", per=c(FALSE, FALSE, FALSE), pcv1=c(-pi,pi),
 #' acealanme3d
 print.hillsfile3d<-function(x,...) {
   hills <- x
-  cat("3D hills file ")
-  cat(hills$filename)
-  cat(" with ")
-  cat(hills$size[1])
-  cat(" lines\n")
+  message("3D hills file ")
+  message(hills$filename)
+  message(" with ")
+  message(hills$size[1])
+  message(" lines\n")
 }
 
 #' Print summary for hillsfile3d
@@ -81,24 +80,24 @@ print.hillsfile3d<-function(x,...) {
 #' summary(acealanme3d)
 summary.hillsfile3d<-function(object,...) {
   hills <- object
-  cat("2D hills file ")
-  cat(hills$filename)
-  cat(" with ")
-  cat(hills$size[1])
-  cat(" lines\n")
-  cat("The CV1 ranges from ")
-  cat(min(hills$hillsfile[,2]))
-  cat(" to ")
-  cat(max(hills$hillsfile[,2]))
-  cat("\nThe CV2 ranges from ")
-  cat(min(hills$hillsfile[,3]))
-  cat(" to ")
-  cat(max(hills$hillsfile[,3]))
-  cat("\nThe CV3 ranges from ")
-  cat(min(hills$hillsfile[,4]))
-  cat(" to ")
-  cat(max(hills$hillsfile[,4]))
-  cat("\n")
+  message("2D hills file ")
+  message(hills$filename)
+  message(" with ")
+  message(hills$size[1])
+  message(" lines\n")
+  message("The CV1 ranges from ")
+  message(min(hills$hillsfile[,2]))
+  message(" to ")
+  message(max(hills$hillsfile[,2]))
+  message("\nThe CV2 ranges from ")
+  message(min(hills$hillsfile[,3]))
+  message(" to ")
+  message(max(hills$hillsfile[,3]))
+  message("\nThe CV3 ranges from ")
+  message(min(hills$hillsfile[,4]))
+  message(" to ")
+  message(max(hills$hillsfile[,4]))
+  message("\n")
 }
 
 #' Print first n lines of hillsfile3d
@@ -254,7 +253,7 @@ plotheights.hillsfile3d<-function(hills, ignoretime=FALSE,
 fes.hillsfile3d<-function(hills, imin=1, imax=NULL, xlim=NULL, ylim=NULL, zlim=NULL, npoints=NULL) {
   if(!is.null(imax)) {
     if(hills$size[1]<imax) {
-      cat("Warning: You requested more hills by imax than available, using all hills\n")
+      warning("Warning: You requested more hills by imax than available, using all hills\n")
       imax<-hills$size[1]
     }
   }
@@ -417,7 +416,7 @@ fes.hillsfile3d<-function(hills, imin=1, imax=NULL, xlim=NULL, ylim=NULL, zlim=N
 fes2.hillsfile3d<-function(hills, imin=1, imax=NULL, xlim=NULL, ylim=NULL, zlim=NULL, npoints=NULL) {
   if(!is.null(imax)) {
     if(hills$size[1]<imax) {
-      cat("Warning: You requested more hills by imax than available, using all hills\n")
+      warning("Warning: You requested more hills by imax than available, using all hills\n")
       imax<-hills$size[1]
     }
   }
@@ -636,8 +635,7 @@ read.plumed3d<-function(file="fes.dat", per=c(FALSE,FALSE,FALSE)) {
     if(sum(fes1$z!=fes2$z)>0) {
       stop("Error: Free energy surfaces have different CV3 axes, exiting")
     }
-    cat("Warning: FES obtained by subtraction of two FESes\n")
-    cat(" will inherit hills only from the first FES\n")
+    warning("Warning: FES obtained by subtraction of two FESes will inherit hills only from the first FES\n")
     cfes<-list(fes=fes1$fes-fes2$fes, hills=fes1$hills, rows=fes1$rows, dimension=fes1$dimension, per=fes1$per, x=fes1$x, y=fes1$y, z=fes1$z, pcv1=fes1$pcv1, pcv2=fes1$pcv2, pcv3=fes1$pcv3)
   } else if(class(fes1)=="fes3d") {
     cfes<-list(fes=fes1$fes-fes2, hills=fes1$hills, rows=fes1$rows, dimension=fes1$dimension, per=fes1$per, x=fes1$x, y=fes1$y, z=fes1$z, pcv1=fes1$pcv1, pcv2=fes1$pcv2, pcv3=fes1$pcv3)
@@ -661,8 +659,7 @@ read.plumed3d<-function(file="fes.dat", per=c(FALSE,FALSE,FALSE)) {
   } else if(class(fes2)=="fes3d") {
     cfes<-list(fes=fes1*fes2$fes, hills=fes2$hills, rows=fes2$rows, dimension=fes2$dimension, per=fes2$per, x=fes2$x, y=fes2$y, z=fes2$z, pcv1=fes2$pcv1, pcv2=fes2$pcv2, pcv3=fes2$pcv3)
   }
-  cat("Warning: multiplication of FES will multiply\n")
-  cat(" the FES but not hill heights\n")
+  warning("Warning: multiplication of FES will multiply the FES but not hill heights\n")
   class(cfes) <- "fes3d"
   return(cfes)
 }
@@ -676,8 +673,7 @@ read.plumed3d<-function(file="fes.dat", per=c(FALSE,FALSE,FALSE)) {
   } else if(class(coef)=="fes3d") {
     stop("Error: You cannot divide something by fes")
   }
-  cat("Warning: division of FES will divide\n")
-  cat(" the FES but not hill heights\n")
+  warning("Warning: division of FES will divide the FES but not hill heights\n")
   class(cfes) <- "fes3d"
   return(cfes)
 }
@@ -730,17 +726,17 @@ max.fes3d<-function(inputfes, na.rm=NULL,...) {
 #' tfes
 print.fes3d<-function(x,...) {
   inputfes<-x
-  cat("3D free energy surface with ")
-  cat(inputfes$rows)
-  cat(" x ")
-  cat(inputfes$rows)
-  cat(" x ")
-  cat(inputfes$rows)
-  cat(" points, maximum ")
-  cat(max(inputfes$fes))
-  cat(" and minimum ")
-  cat(min(inputfes$fes))
-  cat("\n")
+  message("3D free energy surface with ")
+  message(inputfes$rows)
+  message(" x ")
+  message(inputfes$rows)
+  message(" x ")
+  message(inputfes$rows)
+  message(" points, maximum ")
+  message(max(inputfes$fes))
+  message(" and minimum ")
+  message(min(inputfes$fes))
+  message("\n")
 }
 
 #' Print summary of 3D free energy surface
@@ -757,17 +753,17 @@ print.fes3d<-function(x,...) {
 #' summary(tfes)
 summary.fes3d<-function(object,...) {
   inputfes <- object
-  cat("3D free energy surface with ")
-  cat(inputfes$rows)
-  cat(" x ")
-  cat(inputfes$rows)
-  cat(" x ")
-  cat(inputfes$rows)
-  cat(" points, maximum ")
-  cat(max(inputfes$fes))
-  cat(" and minimum ")
-  cat(min(inputfes$fes))
-  cat("\n")
+  message("3D free energy surface with ")
+  message(inputfes$rows)
+  message(" x ")
+  message(inputfes$rows)
+  message(" x ")
+  message(inputfes$rows)
+  message(" points, maximum ")
+  message(max(inputfes$fes))
+  message(" and minimum ")
+  message(min(inputfes$fes))
+  message("\n")
 }
 
 #' Plot 3D free energy surface object

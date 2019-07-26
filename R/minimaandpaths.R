@@ -154,7 +154,7 @@ oneminimum.fes3d<-function(inputfes, cv1, cv2, cv3) {
 #' minima<-fesminima(tfes)
 #' minima
 print.minima3d<-function(x,...) {
-  print(x$minima)
+  message(x$minima)
 }
 
 #' Print minima3d object summary
@@ -186,7 +186,7 @@ summary.minima3d<-function(object, temp=300, eunit="kJ/mol",...) {
   toprint<-cbind(toprint, 100*toprint[,tind+1]/sumpop)
   names(toprint)[tind+1]<-"relative_pop"
   names(toprint)[tind+2]<-"pop"
-  print(toprint)
+  message(toprint)
 }
 
 #' Plot minima3d object
@@ -275,7 +275,7 @@ feprof.minima3d <- function(minims, imax=NULL) {
   }
   if(imax>nrow(hills)) {
     imax<-nrow(hills)
-    cat("Warning: You requested more hills by imax than available, using all hills\n")
+    warning("Warning: You requested more hills by imax than available, using all hills\n")
   }
   tt <- 1:imax
   mms <- data.frame(tt)
