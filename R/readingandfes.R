@@ -757,17 +757,16 @@ print.fes3d<-function(x,...) {
 #' summary(tfes)
 summary.fes3d<-function(object,...) {
   inputfes <- object
-  message("3D free energy surface with ")
-  message(inputfes$rows)
-  message(" x ")
-  message(inputfes$rows)
-  message(" x ")
-  message(inputfes$rows)
-  message(" points, maximum ")
-  message(max(inputfes$fes))
-  message(" and minimum ")
-  message(min(inputfes$fes))
-  message("\n")
+  toprint <- "3D free energy surface with "
+  toprint <- paste(toprint, toString(inputfes$rows), sep="")
+  toprint <- paste(toprint, " x ", sep="")
+  toprint <- paste(toprint, toString(inputfes$rows), sep="")
+  toprint <- paste(toprint, " x ", sep="")
+  toprint <- paste(toprint, toString(inputfes$rows), sep="")
+  toprint <- paste(toprint, " points, maximum ", sep="")
+  toprint <- paste(toprint, toString(max(inputfes$fes)), sep="")
+  toprint <- paste(toprint, " and minimum ", sep="")
+  toprint <- paste(toprint, toString(min(inputfes$fes)), sep="")
 }
 
 #' Plot 3D free energy surface object

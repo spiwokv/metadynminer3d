@@ -154,7 +154,7 @@ oneminimum.fes3d<-function(inputfes, cv1, cv2, cv3) {
 #' minima<-fesminima(tfes)
 #' minima
 print.minima3d<-function(x,...) {
-  message(x$minima)
+  if(verbose)cat(x$minima)
 }
 
 #' Print minima3d object summary
@@ -186,7 +186,7 @@ summary.minima3d<-function(object, temp=300, eunit="kJ/mol",...) {
   toprint<-cbind(toprint, 100*toprint[,tind+1]/sumpop)
   names(toprint)[tind+1]<-"relative_pop"
   names(toprint)[tind+2]<-"pop"
-  message(toprint)
+  if(verbose)cat(toprint)
 }
 
 #' Plot minima3d object
