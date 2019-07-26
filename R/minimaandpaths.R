@@ -153,8 +153,9 @@ oneminimum.fes3d<-function(inputfes, cv1, cv2, cv3) {
 #' tfes<-fes(acealanme3d, imax=5000)
 #' minima<-fesminima(tfes)
 #' minima
-print.minima3d<-function(x,...) {
-  return(x$minima)
+print.minima3d<-function(object,...) {
+  minims<-object
+  return(minims$minima)
 }
 
 #' Print minima3d object summary
