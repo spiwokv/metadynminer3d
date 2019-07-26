@@ -61,11 +61,12 @@ read.hills3d<-function(file="HILLS", per=c(FALSE, FALSE, FALSE), pcv1=c(-pi,pi),
 #' acealanme3d
 print.hillsfile3d<-function(x,...) {
   hills <- x
-  message("3D hills file ")
-  message(hills$filename)
-  message(" with ")
-  message(hills$size[1])
-  message(" lines\n")
+  toprint <- "3D hills file "
+  toprint <- paste(toprint, toString(hills$filename), sep="")
+  toprint <- paste(toprint, " with ", sep="")
+  toprint <- paste(toprint, toString(hills$size[1]), sep="")
+  toprint <- paste(toprint, " lines", sep="")
+  message(toprint)
 }
 
 #' Print summary for hillsfile3d
@@ -80,24 +81,27 @@ print.hillsfile3d<-function(x,...) {
 #' summary(acealanme3d)
 summary.hillsfile3d<-function(object,...) {
   hills <- object
-  message("2D hills file ")
-  message(hills$filename)
-  message(" with ")
-  message(hills$size[1])
-  message(" lines\n")
-  message("The CV1 ranges from ")
-  message(min(hills$hillsfile[,2]))
-  message(" to ")
-  message(max(hills$hillsfile[,2]))
-  message("\nThe CV2 ranges from ")
-  message(min(hills$hillsfile[,3]))
-  message(" to ")
-  message(max(hills$hillsfile[,3]))
-  message("\nThe CV3 ranges from ")
-  message(min(hills$hillsfile[,4]))
-  message(" to ")
-  message(max(hills$hillsfile[,4]))
-  message("\n")
+  toprint <- "2D hills file "
+  toprint <- paste(toprint, toString(hills$filename), sep="")
+  toprint <- paste(toprint, " with ", sep="")
+  toprint <- paste(toprint, toString(hills$size[1]), sep="")
+  toprint <- paste(toprint, " lines", sep="")
+  message(toprint)
+  toprint <- "The CV1 ranges from "
+  toprint <- paste(toprint, toString(min(hills$hillsfile[,2])), sep="")
+  toprint <- paste(toprint, " to ", sep="")
+  toprint <- paste(toprint, toString(max(hills$hillsfile[,2])), sep="")
+  message(toprint)
+  toprint <- "The CV2 ranges from "
+  toprint <- paste(toprint, toString(min(hills$hillsfile[,3])), sep="")
+  toprint <- paste(toprint, " to ", sep="")
+  toprint <- paste(toprint, toString(max(hills$hillsfile[,3])), sep="")
+  message(toprint)
+  toprint <- "The CV3 ranges from "
+  toprint <- paste(toprint, toString(min(hills$hillsfile[,4])), sep="")
+  toprint <- paste(toprint, " to ", sep="")
+  toprint <- paste(toprint, toString(max(hills$hillsfile[,4])), sep="")
+  message(toprint)
 }
 
 #' Print first n lines of hillsfile3d
@@ -726,17 +730,17 @@ max.fes3d<-function(inputfes, na.rm=NULL,...) {
 #' tfes
 print.fes3d<-function(x,...) {
   inputfes<-x
-  message("3D free energy surface with ")
-  message(inputfes$rows)
-  message(" x ")
-  message(inputfes$rows)
-  message(" x ")
-  message(inputfes$rows)
-  message(" points, maximum ")
-  message(max(inputfes$fes))
-  message(" and minimum ")
-  message(min(inputfes$fes))
-  message("\n")
+  toprint <- "3D free energy surface with "
+  toprint <- paste(toprint, toString(inputfes$rows), sep="")
+  toprint <- paste(toprint, " x ", sep="")
+  toprint <- paste(toprint, toString(inputfes$rows), sep="")
+  toprint <- paste(toprint, " x ", sep="")
+  toprint <- paste(toprint, toString(inputfes$rows), sep="")
+  toprint <- paste(toprint, " points, maximum ", sep="")
+  toprint <- paste(toprint, toString(max(inputfes$fes)), sep="")
+  toprint <- paste(toprint, " and minimum ", sep="")
+  toprint <- paste(toprint, toString(min(inputfes$fes)), sep="")
+  message(toprint)
 }
 
 #' Print summary of 3D free energy surface
