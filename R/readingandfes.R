@@ -767,6 +767,7 @@ summary.fes3d<-function(object,...) {
   toprint <- paste(toprint, toString(max(inputfes$fes)), sep="")
   toprint <- paste(toprint, " and minimum ", sep="")
   toprint <- paste(toprint, toString(min(inputfes$fes)), sep="")
+  message(toprint)
 }
 
 #' Plot 3D free energy surface object
