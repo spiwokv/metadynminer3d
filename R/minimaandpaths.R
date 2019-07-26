@@ -154,7 +154,7 @@ oneminimum.fes3d<-function(inputfes, cv1, cv2, cv3) {
 #' minima<-fesminima(tfes)
 #' minima
 print.minima3d<-function(x,...) {
-  x$minima
+  print(x$minima)
 }
 
 #' Print minima3d object summary
