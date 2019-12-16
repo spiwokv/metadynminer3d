@@ -6,8 +6,8 @@ matrix:
   include:
     - os: linux
       r: oldrel
+      r_build_args: --resave-data
       dist: trusty
-      r: r_build_args: --resave-data
       warnings_are_errors: true
       sudo: required
       fortran: false
@@ -22,8 +22,8 @@ matrix:
         - RGL_USE_NULL=TRUE
     - os: linux
       r: release
+      r_build_args: --resave-data
       dist: trusty
-      r: r_build_args: --resave-data
       warnings_are_errors: true
       sudo: required
       fortran: false
@@ -38,8 +38,8 @@ matrix:
         - RGL_USE_NULL=TRUE
     - os: linux
       r: devel
+      r_build_args: --resave-data
       dist: trusty
-      r: r_build_args: --resave-data
       warnings_are_errors: true
       sudo: required
       fortran: false
@@ -54,8 +54,8 @@ matrix:
         - RGL_USE_NULL=TRUE
     - os: linux
       r: oldrel
+      r_build_args: --resave-data
       dist: trusty
-      r: r_build_args: --resave-data
       warnings_are_errors: true
       sudo: required
       fortran: false
@@ -71,8 +71,8 @@ matrix:
         - RGL_USE_NULL=TRUE
     - os: linux
       r: release
+      r_build_args: --resave-data
       dist: trusty
-      r: r_build_args: --resave-data
       warnings_are_errors: true
       sudo: required
       fortran: false
