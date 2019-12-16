@@ -7,7 +7,7 @@ matrix:
     - os: linux
       r: oldrel
       dist: trusty
-      r_build_args: --resave-data
+      r: r_build_args: --resave-data
       warnings_are_errors: true
       sudo: required
       fortran: false
@@ -23,7 +23,7 @@ matrix:
     - os: linux
       r: release
       dist: trusty
-      r_build_args: --resave-data
+      r: r_build_args: --resave-data
       warnings_are_errors: true
       sudo: required
       fortran: false
@@ -39,7 +39,7 @@ matrix:
     - os: linux
       r: devel
       dist: trusty
-      r_build_args: --resave-data
+      r: r_build_args: --resave-data
       warnings_are_errors: true
       sudo: required
       fortran: false
@@ -55,7 +55,7 @@ matrix:
     - os: linux
       r: oldrel
       dist: trusty
-      r_build_args: --resave-data
+      r: r_build_args: --resave-data
       warnings_are_errors: true
       sudo: required
       fortran: false
@@ -72,7 +72,7 @@ matrix:
     - os: linux
       r: release
       dist: trusty
-      r_build_args: --resave-data
+      r: r_build_args: --resave-data
       warnings_are_errors: true
       sudo: required
       fortran: false
