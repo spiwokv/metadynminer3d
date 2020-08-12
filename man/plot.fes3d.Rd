@@ -4,11 +4,18 @@
 \alias{plot.fes3d}
 \title{Plot 3D free energy surface object}
 \usage{
-\method{plot}{fes3d}(x, xlab = NULL, ylab = NULL, zlab = NULL, level = NULL,
+\method{plot}{fes3d}(x, xlim = NULL, ylim = NULL, zlim = NULL,
+  xlab = NULL, ylab = NULL, zlab = NULL, level = NULL,
   col = NULL, alpha = NULL, main = NULL, sub = NULL, fill = TRUE, ...)
 }
 \arguments{
 \item{x}{fes3d object.}
+  
+\item{xlim}{numeric vector of length 2, giving the x coordinates range.}
+
+\item{ylim}{numeric vector of length 2, giving the y coordinates range.}
+
+\item{zlim}{numeric vector of length 2, giving the z coordinates range.}
 
 \item{xlab}{a title for the x axis: see 'title'.}
 
