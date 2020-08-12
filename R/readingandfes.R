@@ -848,6 +848,9 @@ summary.fes3d<-function(object,...) {
 #' @param xlab a title for the x axis: see 'title'.
 #' @param ylab a title for the y axis: see 'title'.
 #' @param zlab a title for the z axis: see 'title'.
+#' @param xlim numeric vector of length 2, giving the x coordinates range.
+#' @param ylim numeric vector of length 2, giving the y coordinates range.
+#' @param zlim numeric vector of length 2, giving the z coordinates range.
 #' @param col color of the free energy surface. It can be a single color
 #'        or a vector with multiple colors for multiple 3D isosurfaces.
 #' @param alpha number or numeric vector of alpha levels (transparency) of
@@ -897,7 +900,6 @@ plot.fes3d<-function(x, xlab=NULL, ylab=NULL, zlab=NULL,
   contour3d(f=fes, level=level, x=x, y=y, z=z,
             color=col, alpha=alpha, fill=fill, add=T)
   axes3d()
-  #title3d(xlab=xlab, ylab=ylab, zlab=zlab, main=main, sub=sub)
   box3d()
 }
 
