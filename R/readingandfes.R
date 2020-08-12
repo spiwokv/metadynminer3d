@@ -892,11 +892,12 @@ plot.fes3d<-function(x, xlab=NULL, ylab=NULL, zlab=NULL,
     if(is.null(col)) col<-"orange"
     if(is.null(alpha)) alpha<-1
   }
-  points3d(c(),c(),c(), xlim=xlim, ylim=ylim, zlim=zlim)
+  plot3d(c(), c(), c(), xlim=xlim, ylim=ylim, zlim=zlim,
+         xlab=xlab, ylab=ylab, zlab=zlab, main=main, sub=sub)
   contour3d(f=fes, level=level, x=x, y=y, z=z,
             color=col, alpha=alpha, fill=fill, add=T)
   axes3d()
-  title3d(xlab=xlab, ylab=ylab, zlab=zlab, main=main, sub=sub)
+  #title3d(xlab=xlab, ylab=ylab, zlab=zlab, main=main, sub=sub)
   box3d()
 }
 
