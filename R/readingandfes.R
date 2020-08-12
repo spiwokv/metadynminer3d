@@ -878,9 +878,25 @@ plot.fes3d<-function(x, xlab=NULL, ylab=NULL, zlab=NULL,
   x<-inputfes$x
   y<-inputfes$y
   z<-inputfes$z
-  if(is.null(xlim)) xlim=range(x)
-  if(is.null(ylim)) ylim=range(y)
-  if(is.null(zlim)) zlim=range(z)
+  newfes <- inputfes
+  if(is.null(xlim)) {
+    xlim=range(x)
+  } else {
+    newfes$fes <- newfes$fes[newfes$x > xlim[1] & newfes$x < xlim[2],,]
+    newfes$x <- newfes$x[newfes$x > xlim[1] & newfes$x < xlim[2]]
+  }
+  if(is.null(ylim)) {
+    ylim=range(y)
+  } else {
+    newfes$fes <- newfes$fes[newfes$y > ylim[1] & newfes$y < ylim[2],,]
+    newfes$y <- newfes$y[newfes$y > ylim[1] & newfes$y < ylim[2]]
+  }
+  if(is.null(zlim)) {
+    zlim=range(z)
+  } else {
+    newfes$fes <- newfes$fes[newfes$z > zlim[1] & newfes$z < zlim[2],,]
+    newfes$z <- newfes$z[newfes$z > zlim[1] & newfes$z < zlim[2]]
+  }
   if(is.null(xlab)) xlab="CV1"
   if(is.null(ylab)) ylab="CV2"
   if(is.null(zlab)) zlab="CV3"
@@ -897,7 +913,7 @@ plot.fes3d<-function(x, xlab=NULL, ylab=NULL, zlab=NULL,
   }
   plot3d(c(), c(), c(), xlim=xlim, ylim=ylim, zlim=zlim,
          xlab=xlab, ylab=ylab, zlab=zlab, main=main, sub=sub)
-  contour3d(f=fes, level=level, x=x, y=y, z=z,
+  contour3d(f=newfes, level=level, x=x, y=y, z=z,
             color=col, alpha=alpha, fill=fill, add=T)
   aspect3d(1,1,1)
   axes3d()
