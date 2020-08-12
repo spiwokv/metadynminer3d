@@ -899,6 +899,7 @@ plot.fes3d<-function(x, xlab=NULL, ylab=NULL, zlab=NULL,
          xlab=xlab, ylab=ylab, zlab=zlab, main=main, sub=sub)
   contour3d(f=fes, level=level, x=x, y=y, z=z,
             color=col, alpha=alpha, fill=fill, add=T)
+  aspect3d(1,1,1)
   axes3d()
   box3d()
 }
