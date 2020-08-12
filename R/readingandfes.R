@@ -864,6 +864,7 @@ summary.fes3d<-function(object,...) {
 #' tfes3d<-fes(acealanme3d, imax=5000)
 #' plot(tfes3d)
 plot.fes3d<-function(x, xlab=NULL, ylab=NULL, zlab=NULL,
+                     xlim=NULL, ylim=NULL, zlim=NULL,
                      level=NULL, col=NULL, alpha=NULL,
                      main=NULL, sub=NULL,
                      fill=TRUE,...) {
@@ -874,6 +875,9 @@ plot.fes3d<-function(x, xlab=NULL, ylab=NULL, zlab=NULL,
   x<-inputfes$x
   y<-inputfes$y
   z<-inputfes$z
+  if(is.null(xlim)) xlim=range(x)
+  if(is.null(ylim)) ylim=range(y)
+  if(is.null(zlim)) zlim=range(z)
   if(is.null(xlab)) xlab="CV1"
   if(is.null(ylab)) ylab="CV2"
   if(is.null(zlab)) zlab="CV3"
