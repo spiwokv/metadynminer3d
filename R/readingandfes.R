@@ -881,20 +881,20 @@ plot.fes3d<-function(x, xlab=NULL, ylab=NULL, zlab=NULL,
   if(is.null(xlim)) {
     xlim=range(x)
   } else {
-    fes <- fes[x => xlim[1] & x <= xlim[2],,]
-    x <- x[x => xlim[1] & x <= xlim[2]]
+    fes <- fes[x >= xlim[1] & x <= xlim[2],,]
+    x <- x[x >= xlim[1] & x <= xlim[2]]
   }
   if(is.null(ylim)) {
     ylim=range(y)
   } else {
-    fes <- fes[,y => ylim[1] & y <= ylim[2],]
-    y <- y[y => ylim[1] & y <= ylim[2]]
+    fes <- fes[,y >= ylim[1] & y <= ylim[2],]
+    y <- y[y >= ylim[1] & y <= ylim[2]]
   }
   if(is.null(zlim)) {
     zlim=range(z)
   } else {
-    fes <- fes[,,z => zlim[1] & z <= zlim[2]]
-    z <- z[z => zlim[1] & z <= zlim[2]]
+    fes <- fes[,,z >= zlim[1] & z <= zlim[2]]
+    z <- z[z >= zlim[1] & z <= zlim[2]]
   }
   if(is.null(xlab)) xlab="CV1"
   if(is.null(ylab)) ylab="CV2"
