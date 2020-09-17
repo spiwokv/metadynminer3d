@@ -11,6 +11,9 @@ matrix:
       warnings_are_errors: true
       sudo: required
       fortran: false
+      before_install:
+        - sudo apt-get update
+        - sudo apt-get -y install mesa-common-dev
       install:
         - R -e 'install.packages("Rcpp")'
         - R -e 'install.packages("rgl")'
@@ -27,6 +30,9 @@ matrix:
       warnings_are_errors: true
       sudo: required
       fortran: false
+      before_install:
+        - sudo apt-get update
+        - sudo apt-get -y install mesa-common-dev
       install:
         - R -e 'install.packages("Rcpp")'
         - R -e 'install.packages("rgl")'
@@ -43,6 +49,9 @@ matrix:
       warnings_are_errors: true
       sudo: required
       fortran: false
+      before_install:
+        - sudo apt-get update
+        - sudo apt-get -y install mesa-common-dev
       install:
         - R -e 'install.packages("Rcpp")'
         - R -e 'install.packages("rgl")'
@@ -60,6 +69,9 @@ matrix:
       sudo: required
       fortran: false
       osx_image: xcode9
+      before_install:
+        - sudo apt-get update
+        - sudo apt-get -y install mesa-common-dev
       install:
         - R -e 'install.packages("Rcpp")'
         - R -e 'install.packages("rgl")'
@@ -77,6 +89,9 @@ matrix:
       sudo: required
       fortran: false
       osx_image: xcode9
+      before_install:
+        - sudo apt-get update
+        - sudo apt-get -y install mesa-common-dev
       install:
         - R -e 'install.packages("Rcpp")'
         - R -e 'install.packages("rgl")'
