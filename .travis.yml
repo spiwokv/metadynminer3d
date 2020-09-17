@@ -13,7 +13,7 @@ matrix:
       fortran: false
       before_install:
         - sudo apt-get update
-        - sudo apt-get -y install mesa-common-dev
+        - sudo apt-get -y install libglu1-mesa-dev
       install:
         - R -e 'install.packages("Rcpp")'
         - R -e 'install.packages("rgl")'
@@ -32,7 +32,7 @@ matrix:
       fortran: false
       before_install:
         - sudo apt-get update
-        - sudo apt-get -y install mesa-common-dev
+        - sudo apt-get -y install libglu1-mesa-dev
       install:
         - R -e 'install.packages("Rcpp")'
         - R -e 'install.packages("rgl")'
@@ -51,7 +51,7 @@ matrix:
       fortran: false
       before_install:
         - sudo apt-get update
-        - sudo apt-get -y install mesa-common-dev
+        - sudo apt-get -y install libglu1-mesa-dev
       install:
         - R -e 'install.packages("Rcpp")'
         - R -e 'install.packages("rgl")'
@@ -71,7 +71,7 @@ matrix:
       osx_image: xcode9
       before_install:
         - sudo apt-get update
-        - sudo apt-get -y install mesa-common-dev
+        - sudo apt-get -y install libglu1-mesa-dev
       install:
         - R -e 'install.packages("Rcpp")'
         - R -e 'install.packages("rgl")'
@@ -91,7 +91,7 @@ matrix:
       osx_image: xcode9
       before_install:
         - sudo apt-get update
-        - sudo apt-get -y install mesa-common-dev
+        - sudo apt-get -y install libglu1-mesa-dev
       install:
         - R -e 'install.packages("Rcpp")'
         - R -e 'install.packages("rgl")'
