@@ -72,10 +72,6 @@ matrix:
       sudo: required
       fortran: false
       osx_image: xcode11.3
-      before_install:
-        - sudo apt-get update
-        - sudo apt-get -y install libglu1-mesa-dev
-        - export DISPLAY=:99.0
       install:
         - R -e 'install.packages("Rcpp")'
         - R -e 'install.packages("rgl")'
@@ -93,10 +89,6 @@ matrix:
       sudo: required
       fortran: false
       osx_image: xcode11.3
-      before_install:
-        - sudo apt-get update
-        - sudo apt-get -y install libglu1-mesa-dev
-        - export DISPLAY=:99.0
       install:
         - R -e 'install.packages("Rcpp")'
         - R -e 'install.packages("rgl")'
