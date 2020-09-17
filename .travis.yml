@@ -7,7 +7,7 @@ matrix:
     - os: linux
       r: oldrel
       r_build_args: --resave-data
-      dist: eoan
+      dist: xenial
       warnings_are_errors: true
       sudo: required
       fortran: false
@@ -23,7 +23,7 @@ matrix:
     - os: linux
       r: release
       r_build_args: --resave-data
-      dist: eoan
+      dist: xenial
       warnings_are_errors: true
       sudo: required
       fortran: false
@@ -39,7 +39,7 @@ matrix:
     - os: linux
       r: devel
       r_build_args: --resave-data
-      dist: eoan
+      dist: xenial
       warnings_are_errors: true
       sudo: required
       fortran: false
@@ -55,7 +55,7 @@ matrix:
     - os: linux
       r: oldrel
       r_build_args: --resave-data
-      dist: eoan
+      dist: xenial
       warnings_are_errors: true
       sudo: required
       fortran: false
@@ -72,7 +72,7 @@ matrix:
     - os: linux
       r: release
       r_build_args: --resave-data
-      dist: eoan
+      dist: xenial
       warnings_are_errors: true
       sudo: required
       fortran: false
