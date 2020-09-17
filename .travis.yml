@@ -14,6 +14,8 @@ matrix:
       before_install:
         - sudo apt-get update
         - sudo apt-get -y install libglu1-mesa-dev
+        - export DISPLAY=:99.0
+        - sh -e /etc/init.d/xvfb start
       install:
         - R -e 'install.packages("Rcpp")'
         - R -e 'install.packages("rgl")'
@@ -33,6 +35,8 @@ matrix:
       before_install:
         - sudo apt-get update
         - sudo apt-get -y install libglu1-mesa-dev
+        - export DISPLAY=:99.0
+        - sh -e /etc/init.d/xvfb start
       install:
         - R -e 'install.packages("Rcpp")'
         - R -e 'install.packages("rgl")'
@@ -52,6 +56,8 @@ matrix:
       before_install:
         - sudo apt-get update
         - sudo apt-get -y install libglu1-mesa-dev
+        - export DISPLAY=:99.0
+        - sh -e /etc/init.d/xvfb start
       install:
         - R -e 'install.packages("Rcpp")'
         - R -e 'install.packages("rgl")'
@@ -72,6 +78,8 @@ matrix:
       before_install:
         - sudo apt-get update
         - sudo apt-get -y install libglu1-mesa-dev
+        - export DISPLAY=:99.0
+        - sh -e /etc/init.d/xvfb start
       install:
         - R -e 'install.packages("Rcpp")'
         - R -e 'install.packages("rgl")'
@@ -92,6 +100,8 @@ matrix:
       before_install:
         - sudo apt-get update
         - sudo apt-get -y install libglu1-mesa-dev
+        - export DISPLAY=:99.0
+        - sh -e /etc/init.d/xvfb start
       install:
         - R -e 'install.packages("Rcpp")'
         - R -e 'install.packages("rgl")'
