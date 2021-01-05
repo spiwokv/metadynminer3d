@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/spiwokv/metadynminer3d.svg?branch=master)](https://travis-ci.org/spiwokv/metadynminer3d) 
+[![Build Status](https://travis-ci.com/spiwokv/metadynminer3d.svg?branch=master)](https://travis-ci.com/spiwokv/metadynminer3d) 
 [![Build Status](https://ci.appveyor.com/api/projects/status/github/spiwokv/metadynminer3d?branch=master&svg=true)](https://ci.appveyor.com/project/spiwokv/metadynminer3d) 
 [![CRAN status](https://www.r-pkg.org/badges/version/metadynminer3d)](https://cran.r-project.org/package=metadynminer3d) 
 [![CRAN downloads](https://cranlogs.r-pkg.org/badges/metadynminer3d)](https://cran.r-project.org/package=metadynminer3d)
