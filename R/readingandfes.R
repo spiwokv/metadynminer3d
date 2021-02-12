@@ -151,7 +151,7 @@ print.hillsfile3d<-function(x,...) {
 #' summary(acealanme3d)
 summary.hillsfile3d<-function(object,...) {
   hills <- object
-  toprint <- "2D hills file "
+  toprint <- "3D hills file "
   toprint <- paste(toprint, toString(hills$filename), sep="")
   toprint <- paste(toprint, " with ", sep="")
   toprint <- paste(toprint, toString(hills$size[1]), sep="")
