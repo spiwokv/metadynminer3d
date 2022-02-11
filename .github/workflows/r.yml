@@ -8,6 +8,8 @@
 
 name: R
 
+env: RGL_USE_NULL: true
+
 on:
   push:
     branches: [ master ]
