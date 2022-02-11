@@ -1,8 +1,8 @@
-[![Build Status](https://travis-ci.com/spiwokv/metadynminer3d.svg?branch=master)](https://travis-ci.com/spiwokv/metadynminer3d) 
+[![Build Status](https://github.com/spiwokv/metadynminer3d/actions/workflows/r.yml/badge.svg)](https://github.com/spiwokv/metadynminer3d/actions/) 
 [![Build Status](https://ci.appveyor.com/api/projects/status/github/spiwokv/metadynminer3d?branch=master&svg=true)](https://ci.appveyor.com/project/spiwokv/metadynminer3d) 
 [![CRAN status](https://www.r-pkg.org/badges/version/metadynminer3d)](https://cran.r-project.org/package=metadynminer3d) 
 [![CRAN downloads](https://cranlogs.r-pkg.org/badges/metadynminer3d)](https://cran.r-project.org/package=metadynminer3d)
-[![Rdoc](http://www.rdocumentation.org/badges/version/metadynminer3d)](http://www.rdocumentation.org/packages/metadynminer3d)
+[![Rdoc](http://api.rdocumentation.org/badges/version/metadynminer3d)](http://www.rdocumentation.org/packages/metadynminer3d)
 [![codecov](https://codecov.io/gh/spiwokv/metadynminer3d/branch/master/graph/badge.svg)](https://codecov.io/gh/spiwokv/metadynminer3d/)
 
 # metadynminer3d
