@@ -27,7 +27,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install xquartz
-        if: runner.os == 'macos-latest'
         run: |
           brew --cask install xquartz
       - name: Set up R ${{ matrix.r-version }}
