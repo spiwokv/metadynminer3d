@@ -34,6 +34,7 @@ jobs:
         run: |
           install.packages(c("remotes", "rcmdcheck"))
           remotes::install_deps(dependencies = TRUE)
+      - name: Install xquartz
         if: runner.os == 'macos-latest'
         run: |
           brew --cask install xquartz
