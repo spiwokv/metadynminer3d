@@ -19,7 +19,7 @@ jobs:
     runs-on: macos-latest
     strategy:
       matrix:
-        r-version: '3.6.3'
+        r-version: [ '3.6.3' ]
 
     steps:
       - uses: actions/checkout@v2
