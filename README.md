@@ -105,7 +105,7 @@ You can save free energy surface in WebGL and present it on a web site by typing
 ```R
 writeWebGL(filename="fes3d.html")
 ```
-[fes3d.html](./figs/fes3d.html)
+[fes3d.html](https://htmlpreview.github.io/?https://github.com/spiwokv/metadynminer3d/figs/fes3d.html)
 
 ### Making movie
 It is possible to make movie of rotation of the plot by:
