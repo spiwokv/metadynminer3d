@@ -8,4 +8,6 @@ Fig4: Free energy surface with minima (min3d.png)
 
 Fig5: Evolution of free energy differences (prof3d.png)
 
+Fig6: Animation (movie.gif)
+
 fes3d.html: Free energy surface as an interactive web page.
