@@ -122,6 +122,15 @@ aspect3d(2, 1, 1)
 ```
 after `plot` command. This makes the x-axis twice longer than other axes. 
 
+## Training
+[MetadynMiner Webinar video](https://youtu.be/W8N-G8d0or4)
+
+[Plumed Masterclass tutorial](https://www.plumed.org/doc-master/user-doc/html/masterclass-22-02.html)
+
+[Plumed Masterclass video 1](https://youtu.be/T8a-kP6V3_g)
+
+[Plumed Masterclass video 2](https://youtu.be/q1D39A_LQag)
+
 ## Contact
 Vojtech Spiwok - spiwokv{youknowwhat}vscht.cz
 
