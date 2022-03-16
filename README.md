@@ -103,21 +103,17 @@ rgl.snapshot(filename="plot.png")
 ### Publication of interactive FES on web
 You can save free energy surface in WebGL and present it on a web site by typing:
 ```R
-writeWebGL(filename="index.html")
+writeWebGL(filename="fes3d.html")
 ```
+[fes3d.html](./figs/fes3d.html)
 
 ### Making movie
 It is possible to make movie of rotation of the plot by:
 ```R
-movie3d(spin3d(axis=c(0,0,1)), duration=3)
+movie3d(spin3d(axis=c(0,0,1)), duration=3, dir=".", type="gif")
 ```
-This will create a three-second animated GIF file of rotation around z-axis.
-It needs installation of `convert` command from ImageMagic program. Alternatively, the command:
-```R
-movie3d(spin3d(axis=c(0,0,1)), duration=3,
-        dir=".", convert=FALSE)
-```
-These files can be concatenated by a movie making program such as mencoder.
+This will create a three-second animated GIF `movie.gif` file of rotation around z-axis.
+![movie](./figs/movie.gif)
 
 ### Modifying aspect ratio of box
 The aspect ratio of the box can be modified by:
