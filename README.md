@@ -10,6 +10,8 @@
 ## Web site
 http://metadynamics.cz/metadynminer3d/
 
+https://spiwokv.github.io/metadynminer3d/ ([pkgdown](https://pkgdown.r-lib.org/) web)
+
 ## Introduction
 MetadynMiner is R packages for reading, analysis and visualization of metadynamics HILLS files produced by Plumed.
 It reads HILLS files from Plumed, calculates free energy surface by fast Bias Sum algorithm, finds minima and analyses
