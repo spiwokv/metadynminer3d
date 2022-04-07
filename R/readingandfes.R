@@ -664,7 +664,7 @@ read.plumed3d<-function(file="fes.dat", per=c(FALSE,FALSE,FALSE)) {
 
 #' @export
 `+.fes3d`<-function(fes1, fes2) {
-  if((class(fes1)=="fes3d")&(class(fes2)=="fes3d")) {
+  if(inherits(fes1, "fes3d")&inherits(fes2, "fes3d")) {
     if(fes1$rows!=fes2$rows) {
       stop("Error: Free energy surfaces have different numbers of points, exiting")
     }
@@ -678,13 +678,13 @@ read.plumed3d<-function(file="fes.dat", per=c(FALSE,FALSE,FALSE)) {
       stop("Error: Free energy surfaces have different CV3 axes, exiting")
     }
     cfes<-list(fes=fes1$fes+fes2$fes, hills=rbind(fes1$hills, fes2$hills), rows=fes1$rows, dimension=fes1$dimension, per=fes1$per, x=fes1$x, y=fes1$y, z=fes1$z, pcv1=fes1$pcv1, pcv2=fes1$pcv2, pcv3=fes1$pcv3)
-  } else if(class(fes1)=="fes3d") {
+  } else if(inherits(fes1, "fes3d")) {
     cfes<-list(fes=fes1$fes+fes2, hills=fes1$hills, rows=fes1$rows, dimension=fes1$dimension, per=fes1$per, x=fes1$x, y=fes1$y, z=fes1$z, pcv1=fes1$pcv1, pcv2=fes1$pcv2, pcv3=fes1$pcv3)
-  } else if(class(fes2)=="fes3d") {
+  } else if(inherits(fes2, "fes3d")) {
     cfes<-list(fes=fes1+fes2$fes, hills=rbind(fes1$hills,fes2$hills), rows=fes2$rows, dimension=fes2$dimension, per=fes2$per, x=fes2$x, y=fes2$y, z=fes2$z, pcv1=fes2$pcv1, pcv2=fes2$pcv2, pcv3=fes2$pcv3)
-  } else if(class(fes1)=="fes") {
+  } else if(inherits(fes1, "fes")) {
     stop("Error: cannot sum 3D free energy surfaces with 1D or 2D, exiting")
-  } else if(class(fes2)=="fes") {
+  } else if(inherits(fes2, "fes")) {
     stop("Error: cannot sum 3D free energy surfaces with 1D or 2D, exiting")
   }
   class(cfes) <- "fes3d"
@@ -693,7 +693,7 @@ read.plumed3d<-function(file="fes.dat", per=c(FALSE,FALSE,FALSE)) {
 
 #' @export
 `-.fes3d`<-function(fes1, fes2) {
-  if((class(fes1)=="fes3d")&(class(fes2)=="fes3d")) {
+  if(inherits(fes1, "fes3d")&inherits(fes2, "fes3d")) {
     if(fes1$rows!=fes2$rows) {
       stop("Error: Free energy surfaces have different numbers of points, exiting")
     }
@@ -711,13 +711,13 @@ read.plumed3d<-function(file="fes.dat", per=c(FALSE,FALSE,FALSE)) {
     }
     warning("Warning: FES obtained by subtraction of two FESes will inherit hills only from the first FES\n")
     cfes<-list(fes=fes1$fes-fes2$fes, hills=fes1$hills, rows=fes1$rows, dimension=fes1$dimension, per=fes1$per, x=fes1$x, y=fes1$y, z=fes1$z, pcv1=fes1$pcv1, pcv2=fes1$pcv2, pcv3=fes1$pcv3)
-  } else if(class(fes1)=="fes3d") {
+  } else if(inherits(fes1, "fes3d")) {
     cfes<-list(fes=fes1$fes-fes2, hills=fes1$hills, rows=fes1$rows, dimension=fes1$dimension, per=fes1$per, x=fes1$x, y=fes1$y, z=fes1$z, pcv1=fes1$pcv1, pcv2=fes1$pcv2, pcv3=fes1$pcv3)
-  } else if(class(fes2)=="fes3d") {
+  } else if(inherits(fes2, "fes3d")) {
     cfes<-list(fes=fes1-fes2$fes, hills=fes2$hills, rows=fes2$rows, dimension=fes2$dimension, per=fes2$per, x=fes2$x, y=fes2$y, z=fes2$z, pcv1=fes2$pcv1, pcv2=fes2$pcv2, pcv3=fes2$pcv3)
-  } else if(class(fes1)=="fes") {
+  } else if(inherits(fes1, "fes")) {
     stop("Error: cannot subtract 3D free energy surfaces with 1D or 2D, exiting")
-  } else if(class(fes2)=="fes") {
+  } else if(inherits(fes2, "fes")) {
     stop("Error: cannot subtract 3D free energy surfaces with 1D or 2D, exiting")
   }
   class(cfes) <- "fes3d"
@@ -726,11 +726,11 @@ read.plumed3d<-function(file="fes.dat", per=c(FALSE,FALSE,FALSE)) {
 
 #' @export
 `*.fes3d`<-function(fes1, fes2) {
-  if((class(fes1)=="fes3d")&(class(fes2)=="fes3d")) {
+  if(inherits(fes1, "fes3d")&inherits(fes2, "fes3d")) {
     stop("Error: You cannot multiply fes by fes")
-  } else if(class(fes1)=="fes3d") {
+  } else if(inherits(fes1, "fes3d")) {
     cfes<-list(fes=fes1$fes*fes2, hills=fes1$hills, rows=fes1$rows, dimension=fes1$dimension, per=fes1$per, x=fes1$x, y=fes1$y, z=fes1$z, pcv1=fes1$pcv1, pcv2=fes1$pcv2, pcv3=fes1$pcv3)
-  } else if(class(fes2)=="fes3d") {
+  } else if(inherits(fes2, "fes3d")) {
     cfes<-list(fes=fes1*fes2$fes, hills=fes2$hills, rows=fes2$rows, dimension=fes2$dimension, per=fes2$per, x=fes2$x, y=fes2$y, z=fes2$z, pcv1=fes2$pcv1, pcv2=fes2$pcv2, pcv3=fes2$pcv3)
   }
   warning("Warning: multiplication of FES will multiply the FES but not hill heights\n")
@@ -740,11 +740,11 @@ read.plumed3d<-function(file="fes.dat", per=c(FALSE,FALSE,FALSE)) {
 
 #' @export
 `/.fes3d`<-function(fes1, coef) {
-  if((class(fes1)=="fes3d")&(class(coef)=="fes3d")) {
+  if(inherits(fes1, "fes3d")&inherits(coef, "fes3d")) {
     stop("Error: You cannot divide fes by fes")
-  } else if(class(fes1)=="fes3d") {
+  } else if(inherits(fes1, "fes3d")) {
     cfes<-list(fes=fes1$fes/coef, hills=fes1$hills, rows=fes1$rows, dimension=fes1$dimension, per=fes1$per, x=fes1$x, y=fes1$y, z=fes1$z, pcv1=fes1$pcv1, pcv2=fes1$pcv2, pcv3=fes1$pcv3)
-  } else if(class(coef)=="fes3d") {
+  } else if(inherits(coef, "fes3d")) {
     stop("Error: You cannot divide something by fes")
   }
   warning("Warning: division of FES will divide the FES but not hill heights\n")
