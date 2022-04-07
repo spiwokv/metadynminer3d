@@ -1,4 +1,4 @@
-[![Build Status](https://github.com/spiwokv/metadynminer3d/actions/workflows/check-standard.yml/badge.svg)](https://github.com/spiwokv/metadynminer3d/actions/) 
+[![Build Status](https://github.com/spiwokv/metadynminer3d/actions/workflows/check-standard.yaml/badge.svg)](https://github.com/spiwokv/metadynminer3d/actions/) 
 [![Build Status](https://ci.appveyor.com/api/projects/status/github/spiwokv/metadynminer3d?branch=master&svg=true)](https://ci.appveyor.com/project/spiwokv/metadynminer3d) 
 [![CRAN status](https://www.r-pkg.org/badges/version/metadynminer3d)](https://cran.r-project.org/package=metadynminer3d) 
 [![CRAN downloads](https://cranlogs.r-pkg.org/badges/metadynminer3d)](https://cran.r-project.org/package=metadynminer3d)
