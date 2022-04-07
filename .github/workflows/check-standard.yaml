@@ -42,7 +42,7 @@ jobs:
           
       - name: add xquartz
         if: matrix.config.os == 'macOS-latest'
-        run: brew cask install xquartz
+        run: brew install --cask xquartz
 
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
