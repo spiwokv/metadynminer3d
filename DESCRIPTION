@@ -18,9 +18,9 @@ Description: Metadynamics is a state of the art biomolecular simulation techniqu
   to calculate a free energy surface from hills. Minima can be located and plotted on
   the free energy surface. Free energy surfaces and minima can be plotted to produce
   publication quality images.
-LazyData: true, misc3d
+LazyData: true
 License: GPL-3 + file LICENSE
 RoxygenNote: 6.1.0
-Imports: Rcpp
+Imports: Rcpp, misc3d
 Suggests: testthat
 URL: http://www.metadynamics.cz/metadynminer3d
