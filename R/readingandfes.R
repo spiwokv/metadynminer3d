@@ -2,7 +2,7 @@
 #' @import metadynminer
 #' @importFrom Rcpp sourceCpp
 #' @importFrom misc3d contour3d
-#' @import rgl
+#' @importFrom rgl aspect3d axes3d title3d box3d text3d points3d plot3d
 NULL
 
 #' Read 3D HILLS from Plumed
