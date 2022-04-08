@@ -2,7 +2,7 @@
 #' @import metadynminer
 #' @importFrom Rcpp sourceCpp
 #' @importFrom misc3d contour3d
-#' @importFrom rgl aspect3d axes3d title3d box3d text3d points3d plot3d
+#' @importFrom rgl axes3d title3d box3d text3d points3d
 NULL
 
 #' Read 3D HILLS from Plumed
@@ -910,11 +910,11 @@ plot.fes3d<-function(x, xlab=NULL, ylab=NULL, zlab=NULL,
     if(is.null(col)) col<-"orange"
     if(is.null(alpha)) alpha<-1
   }
-  plot3d(c(), c(), c(), xlim=xlim, ylim=ylim, zlim=zlim,
+  rgl::plot3d(c(), c(), c(), xlim=xlim, ylim=ylim, zlim=zlim,
          xlab=xlab, ylab=ylab, zlab=zlab, main=main, sub=sub)
   contour3d(f=fes, level=level, x=x, y=y, z=z,
             color=col, alpha=alpha, fill=fill, add=T)
-  aspect3d(1,1,1)
+  rgl::aspect3d(1,1,1)
   axes3d()
   box3d()
 }
