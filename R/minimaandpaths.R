@@ -318,3 +318,164 @@ feprof.minima3d <- function(minims, imax=NULL) {
   return(profs)
 }
 
+#' Calculate free energy at given point in the CV space
+#'
+#' `fespoint.hillsfile3d` calculates free energy at given point in the CV space 'coord'.
+#' Hills are summed from 'imin' to `imax`. Printed output can be suppressed by setting
+#' 'verb' to TRUE.
+#'
+#' @param hills hillsfile object.
+#' @param coord coordinates of the point in the CV space.
+#' @param imin index of a hill from which calculation of difference
+#'        starts (default 1).
+#' @param imax index of a hill from which summation stops (default the rest of hills).
+#' @param verb if TRUE, the output is verbose (default TRUE).
+#'
+#' @export
+#' @examples
+#' fespoint(acealanme3d, c(0,0,0), imax=5000)
+fespoint.hillsfile3d <- function(hills, coord=NULL, imin=1, imax=NULL, verb=T) {
+  if(!is.null(imax)) {
+    if(hills$size[1]<imax) {
+      cat("Warning: You requested more hills by imax than available, using all hills\n")
+      imax<-hills$size[1]
+    }
+  }
+  if(is.null(imax)) {
+    imax<-hills$size[1]
+  }
+  if(imin==0) {
+    imin <- 1
+  }
+  if(imax>0 & imin>imax) {
+    stop("Error: imax cannot be lower than imin")
+  }
+  if(length(coord)!=3) {
+    stop("Error: for 3D fes you must use 3D vector as coord")
+  }
+  pcv1 <- hills$pcv1[2] - hills$pcv1[1]
+  pcv2 <- hills$pcv2[2] - hills$pcv2[1]
+  pcv3 <- hills$pcv3[2] - hills$pcv3[1]
+  if((hills$per[1]==F)&(hills$per[2]==F)&(hills$per[3]==F)) {
+    fe<-f3d(hills$hills[,2], hills$hills[,3], hills$hills[,4],
+            hills$hills[,5], hills$hills[,6], hills$hills[,7],
+            hills$hills[,8], coord[1], coord[2], coord[3],
+            imin-1, imax-1)
+  }
+  if((hills$per[1]==T)&(hills$per[2]==F)&(hills$per[3]==F)) {
+    if((coord[1]-max(hills$hills[,2]))>0.3*pcv1) {
+      cat("Warning: coord quite outside periodic CV range")
+    }
+    if((min(hills$hills[,2])-coord[1])>0.3*pcv1) {
+      cat("Warning: coord quite outside periodic CV range")
+    }
+    fe<-f3dp1(hills$hills[,2], hills$hills[,3], hills$hills[,4],
+              hills$hills[,5], hills$hills[,6], hills$hills[,7],
+              hills$hills[,8], coord[1], coord[2], coord[3],
+              pcv1, imin-1, imax-1)
+  }
+  if((hills$per[1]==F)&(hills$per[2]==T)&(hills$per[3]==F)) {
+    if((coord[2]-max(hills$hills[,3]))>0.3*pcv2) {
+      cat("Warning: coord quite outside periodic CV range")
+    }
+    if((min(hills$hills[,3])-coord[2])>0.3*pcv2) {
+      cat("Warning: coord quite outside periodic CV range")
+    }
+    fe<-f3dp2(hills$hills[,2], hills$hills[,3], hills$hills[,4],
+              hills$hills[,5], hills$hills[,6], hills$hills[,7],
+              hills$hills[,8], coord[1], coord[2], coord[3],
+              pcv2, imin-1, imax-1)
+  }
+  if((hills$per[1]==F)&(hills$per[2]==F)&(hills$per[3]==T)) {
+    if((coord[3]-max(hills$hills[,4]))>0.3*pcv2) {
+      cat("Warning: coord quite outside periodic CV range")
+    }
+    if((min(hills$hills[,4])-coord[3])>0.3*pcv2) {
+      cat("Warning: coord quite outside periodic CV range")
+    }
+    fe<-f3dp3(hills$hills[,2], hills$hills[,3], hills$hills[,4],
+              hills$hills[,5], hills$hills[,6], hills$hills[,7],
+              hills$hills[,8], coord[1], coord[2], coord[3],
+              pcv3, imin-1, imax-1)
+  }
+  if((hills$per[1]==T)&(hills$per[2]==T)&(hills$per[3]==F)) {
+    if((coord[1]-max(hills$hills[,2]))>0.3*pcv1) {
+      cat("Warning: coord quite outside periodic CV range")
+    }
+    if((min(hills$hills[,2])-coord[1])>0.3*pcv1) {
+      cat("Warning: coord quite outside periodic CV range")
+    }
+    if((coord[2]-max(hills$hills[,3]))>0.3*pcv2) {
+      cat("Warning: coord quite outside periodic CV range")
+    }
+    if((min(hills$hills[,3])-coord[2])>0.3*pcv2) {
+      cat("Warning: coord quite outside periodic CV range")
+    }
+    fe<-f3dp12(hills$hills[,2], hills$hills[,3], hills$hills[,4],
+               hills$hills[,5], hills$hills[,6], hills$hills[,7],
+               hills$hills[,8], coord[1], coord[2], coord[3],
+               pcv1, pcv2, imin-1, imax-1)
+  }
+  if((hills$per[1]==T)&(hills$per[2]==F)&(hills$per[3]==T)) {
+    if((coord[1]-max(hills$hills[,2]))>0.3*pcv1) {
+      cat("Warning: coord quite outside periodic CV range")
+    }
+    if((min(hills$hills[,2])-coord[1])>0.3*pcv1) {
+      cat("Warning: coord quite outside periodic CV range")
+    }
+    if((coord[3]-max(hills$hills[,4]))>0.3*pcv2) {
+      cat("Warning: coord quite outside periodic CV range")
+    }
+    if((min(hills$hills[,4])-coord[3])>0.3*pcv2) {
+      cat("Warning: coord quite outside periodic CV range")
+    }
+    fe<-f3dp13(hills$hills[,2], hills$hills[,3], hills$hills[,4],
+               hills$hills[,5], hills$hills[,6], hills$hills[,7],
+               hills$hills[,8], coord[1], coord[2], coord[3],
+               pcv1, pcv3, imin-1, imax-1)
+  }
+  if((hills$per[1]==F)&(hills$per[2]==T)&(hills$per[3]==T)) {
+    if((coord[2]-max(hills$hills[,3]))>0.3*pcv2) {
+      cat("Warning: coord quite outside periodic CV range")
+    }
+    if((min(hills$hills[,3])-coord[2])>0.3*pcv2) {
+      cat("Warning: coord quite outside periodic CV range")
+    }
+    if((coord[3]-max(hills$hills[,4]))>0.3*pcv2) {
+      cat("Warning: coord quite outside periodic CV range")
+    }
+    if((min(hills$hills[,4])-coord[3])>0.3*pcv2) {
+      cat("Warning: coord quite outside periodic CV range")
+    }
+    fe<-f3dp23(hills$hills[,2], hills$hills[,3], hills$hills[,4],
+               hills$hills[,5], hills$hills[,6], hills$hills[,7],
+               hills$hills[,8], coord[1], coord[2], coord[3],
+               pcv2, pcv3, imin-1, imax-1)
+  }
+  if((hills$per[1]==T)&(hills$per[2]==T)&(hills$per[3]==T)) {
+    if((coord[1]-max(hills$hills[,2]))>0.3*pcv1) {
+      cat("Warning: coord quite outside periodic CV range")
+    }
+    if((min(hills$hills[,2])-coord[1])>0.3*pcv1) {
+      cat("Warning: coord quite outside periodic CV range")
+    }
+    if((coord[2]-max(hills$hills[,3]))>0.3*pcv2) {
+      cat("Warning: coord quite outside periodic CV range")
+    }
+    if((min(hills$hills[,3])-coord[2])>0.3*pcv2) {
+      cat("Warning: coord quite outside periodic CV range")
+    }
+    if((coord[3]-max(hills$hills[,4]))>0.3*pcv2) {
+      cat("Warning: coord quite outside periodic CV range")
+    }
+    if((min(hills$hills[,4])-coord[3])>0.3*pcv2) {
+      cat("Warning: coord quite outside periodic CV range")
+    }
+    fe<-f3dp123(hills$hills[,2], hills$hills[,3], hills$hills[,4],
+                hills$hills[,5], hills$hills[,6], hills$hills[,7],
+                hills$hills[,8], coord[1], coord[2], coord[3],
+                pcv1, pcv2, pcv3, imin-1, imax-1)
+  }
+  return(fe)
+}
+

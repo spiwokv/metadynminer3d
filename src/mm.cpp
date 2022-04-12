@@ -1241,3 +1241,155 @@ NumericVector fe3dp123(NumericVector cv1, NumericVector cv2, NumericVector cv3, 
   return vo;
 }
 
+// [[Rcpp::export]]
+NumericVector f3d(NumericVector cv1, NumericVector cv2, NumericVector cv3, NumericVector width1, NumericVector width2, NumericVector width3, NumericVector heights, double x, double y, double z, int tmin, int tmax) {
+  double dcv1;
+  double dcv2;
+  double dcv3;
+  double v;
+  v = 0.0;
+  for (int i=tmin; i <= tmax; i++) {
+    dcv1 = cv1[i]-x;
+    dcv2 = cv2[i]-y;
+    dcv3 = cv3[i]-z;
+    v -= heights[i]*exp(-dcv1*dcv1/2.0/width1[i]/width1[i]-dcv2*dcv2/2.0/width2[i]/width2[i]-dcv3*dcv3/2.0/width3[i]/width3[i]);
+  }
+  return v;
+}
+
+// [[Rcpp::export]]
+NumericVector f3dp1(NumericVector cv1, NumericVector cv2, NumericVector cv3, NumericVector width1, NumericVector width2, NumericVector width3, NumericVector heights, double x, double y, double z, double p1, int tmin, int tmax) {
+  double dcv1;
+  double dcv2;
+  double dcv3;
+  double v;
+  v = 0.0;
+  for (int i=tmin; i <= tmax; i++) {
+    dcv1 = cv1[i]-x;
+    if(dcv1 >  p1/2.0) dcv1 -= p1;
+    if(dcv1 < -p1/2.0) dcv1 += p1;
+    dcv2 = cv2[i]-y;
+    dcv3 = cv3[i]-z;
+    v -= heights[i]*exp(-dcv1*dcv1/2.0/width1[i]/width1[i]-dcv2*dcv2/2.0/width2[i]/width2[i]-dcv3*dcv3/2.0/width3[i]/width3[i]);
+  }
+  return v;
+}
+
+// [[Rcpp::export]]
+NumericVector f3dp2(NumericVector cv1, NumericVector cv2, NumericVector cv3, NumericVector width1, NumericVector width2, NumericVector width3, NumericVector heights, double x, double y, double z, double p2, int tmin, int tmax) {
+  double dcv1;
+  double dcv2;
+  double dcv3;
+  double v;
+  v = 0.0;
+  for (int i=tmin; i <= tmax; i++) {
+    dcv1 = cv1[i]-x;
+    dcv2 = cv2[i]-y;
+    if(dcv2 >  p2/2.0) dcv2 -= p2;
+    if(dcv2 < -p2/2.0) dcv2 += p2;
+    dcv3 = cv3[i]-z;
+    v -= heights[i]*exp(-dcv1*dcv1/2.0/width1[i]/width1[i]-dcv2*dcv2/2.0/width2[i]/width2[i]-dcv3*dcv3/2.0/width3[i]/width3[i]);
+  }
+  return v;
+}
+
+// [[Rcpp::export]]
+NumericVector f3dp3(NumericVector cv1, NumericVector cv2, NumericVector cv3, NumericVector width1, NumericVector width2, NumericVector width3, NumericVector heights, double x, double y, double z, double p3, int tmin, int tmax) {
+  double dcv1;
+  double dcv2;
+  double dcv3;
+  double v;
+  v = 0.0;
+  for (int i=tmin; i <= tmax; i++) {
+    dcv1 = cv1[i]-x;
+    dcv2 = cv2[i]-y;
+    dcv3 = cv3[i]-z;
+    if(dcv3 >  p3/2.0) dcv3 -= p3;
+    if(dcv3 < -p3/2.0) dcv3 += p3;
+    v -= heights[i]*exp(-dcv1*dcv1/2.0/width1[i]/width1[i]-dcv2*dcv2/2.0/width2[i]/width2[i]-dcv3*dcv3/2.0/width3[i]/width3[i]);
+  }
+  return v;
+}
+
+// [[Rcpp::export]]
+NumericVector f3dp12(NumericVector cv1, NumericVector cv2, NumericVector cv3, NumericVector width1, NumericVector width2, NumericVector width3, NumericVector heights, double x, double y, double z, double p1, double p2, int tmin, int tmax) {
+  double dcv1;
+  double dcv2;
+  double dcv3;
+  double v;
+  v = 0.0;
+  for (int i=tmin; i <= tmax; i++) {
+    dcv1 = cv1[i]-x;
+    if(dcv1 >  p1/2.0) dcv1 -= p1;
+    if(dcv1 < -p1/2.0) dcv1 += p1;
+    dcv2 = cv2[i]-y;
+    if(dcv2 >  p2/2.0) dcv2 -= p2;
+    if(dcv2 < -p2/2.0) dcv2 += p2;
+    dcv3 = cv3[i]-z;
+    v -= heights[i]*exp(-dcv1*dcv1/2.0/width1[i]/width1[i]-dcv2*dcv2/2.0/width2[i]/width2[i]-dcv3*dcv3/2.0/width3[i]/width3[i]);
+  }
+  return v;
+}
+
+// [[Rcpp::export]]
+NumericVector f3dp13(NumericVector cv1, NumericVector cv2, NumericVector cv3, NumericVector width1, NumericVector width2, NumericVector width3, NumericVector heights, double x, double y, double z, double p1, double p3, int tmin, int tmax) {
+  double dcv1;
+  double dcv2;
+  double dcv3;
+  double v;
+  v = 0.0;
+  for (int i=tmin; i <= tmax; i++) {
+    dcv1 = cv1[i]-x;
+    if(dcv1 >  p1/2.0) dcv1 -= p1;
+    if(dcv1 < -p1/2.0) dcv1 += p1;
+    dcv2 = cv2[i]-y;
+    dcv3 = cv3[i]-z;
+    if(dcv3 >  p3/2.0) dcv3 -= p3;
+    if(dcv3 < -p3/2.0) dcv3 += p3;
+    v -= heights[i]*exp(-dcv1*dcv1/2.0/width1[i]/width1[i]-dcv2*dcv2/2.0/width2[i]/width2[i]-dcv3*dcv3/2.0/width3[i]/width3[i]);
+  }
+  return v;
+}
+
+// [[Rcpp::export]]
+NumericVector f3dp23(NumericVector cv1, NumericVector cv2, NumericVector cv3, NumericVector width1, NumericVector width2, NumericVector width3, NumericVector heights, double x, double y, double z, double p2, double p3, int tmin, int tmax) {
+  double dcv1;
+  double dcv2;
+  double dcv3;
+  double v;
+  v = 0.0;
+  for (int i=tmin; i <= tmax; i++) {
+    dcv1 = cv1[i]-x;
+    dcv2 = cv2[i]-y;
+    if(dcv2 >  p2/2.0) dcv2 -= p2;
+    if(dcv2 < -p2/2.0) dcv2 += p2;
+    dcv3 = cv3[i]-z;
+    if(dcv3 >  p3/2.0) dcv3 -= p3;
+    if(dcv3 < -p3/2.0) dcv3 += p3;
+    v -= heights[i]*exp(-dcv1*dcv1/2.0/width1[i]/width1[i]-dcv2*dcv2/2.0/width2[i]/width2[i]-dcv3*dcv3/2.0/width3[i]/width3[i]);
+  }
+  return v;
+}
+
+// [[Rcpp::export]]
+NumericVector f3dp123(NumericVector cv1, NumericVector cv2, NumericVector cv3, NumericVector width1, NumericVector width2, NumericVector width3, NumericVector heights, double x, double y, double z, double p1, double p2, double p3, int tmin, int tmax) {
+  double dcv1;
+  double dcv2;
+  double dcv3;
+  double v;
+  v = 0.0;
+  for (int i=tmin; i <= tmax; i++) {
+    dcv1 = cv1[i]-x;
+    if(dcv1 >  p1/2.0) dcv1 -= p1;
+    if(dcv1 < -p1/2.0) dcv1 += p1;
+    dcv2 = cv2[i]-y;
+    if(dcv2 >  p2/2.0) dcv2 -= p2;
+    if(dcv2 < -p2/2.0) dcv2 += p2;
+    dcv3 = cv3[i]-z;
+    if(dcv3 >  p3/2.0) dcv3 -= p3;
+    if(dcv3 < -p3/2.0) dcv3 += p3;
+    v -= heights[i]*exp(-dcv1*dcv1/2.0/width1[i]/width1[i]-dcv2*dcv2/2.0/width2[i]/width2[i]-dcv3*dcv3/2.0/width3[i]/width3[i]);
+  }
+  return v;
+}
+

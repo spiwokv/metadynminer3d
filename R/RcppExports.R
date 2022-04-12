@@ -97,3 +97,35 @@ fe3dp123 <- function(cv1, cv2, cv3, width1, width2, width3, heights, x, y, z, p1
     .Call('_metadynminer3d_fe3dp123', PACKAGE = 'metadynminer3d', cv1, cv2, cv3, width1, width2, width3, heights, x, y, z, p1, p2, p3, tmin, tmax)
 }
 
+f3d <- function(cv1, cv2, cv3, width1, width2, width3, heights, x, y, z, tmin, tmax) {
+    .Call('_metadynminer3d_f3d', PACKAGE = 'metadynminer3d', cv1, cv2, cv3, width1, width2, width3, heights, x, y, z, tmin, tmax)
+}
+
+f3dp1 <- function(cv1, cv2, cv3, width1, width2, width3, heights, x, y, z, p1, tmin, tmax) {
+    .Call('_metadynminer3d_f3dp1', PACKAGE = 'metadynminer3d', cv1, cv2, cv3, width1, width2, width3, heights, x, y, z, p1, tmin, tmax)
+}
+
+f3dp2 <- function(cv1, cv2, cv3, width1, width2, width3, heights, x, y, z, p2, tmin, tmax) {
+    .Call('_metadynminer3d_f3dp2', PACKAGE = 'metadynminer3d', cv1, cv2, cv3, width1, width2, width3, heights, x, y, z, p2, tmin, tmax)
+}
+
+f3dp3 <- function(cv1, cv2, cv3, width1, width2, width3, heights, x, y, z, p3, tmin, tmax) {
+    .Call('_metadynminer3d_f3dp3', PACKAGE = 'metadynminer3d', cv1, cv2, cv3, width1, width2, width3, heights, x, y, z, p3, tmin, tmax)
+}
+
+f3dp12 <- function(cv1, cv2, cv3, width1, width2, width3, heights, x, y, z, p1, p2, tmin, tmax) {
+    .Call('_metadynminer3d_f3dp12', PACKAGE = 'metadynminer3d', cv1, cv2, cv3, width1, width2, width3, heights, x, y, z, p1, p2, tmin, tmax)
+}
+
+f3dp13 <- function(cv1, cv2, cv3, width1, width2, width3, heights, x, y, z, p1, p3, tmin, tmax) {
+    .Call('_metadynminer3d_f3dp13', PACKAGE = 'metadynminer3d', cv1, cv2, cv3, width1, width2, width3, heights, x, y, z, p1, p3, tmin, tmax)
+}
+
+f3dp23 <- function(cv1, cv2, cv3, width1, width2, width3, heights, x, y, z, p2, p3, tmin, tmax) {
+    .Call('_metadynminer3d_f3dp23', PACKAGE = 'metadynminer3d', cv1, cv2, cv3, width1, width2, width3, heights, x, y, z, p2, p3, tmin, tmax)
+}
+
+f3dp123 <- function(cv1, cv2, cv3, width1, width2, width3, heights, x, y, z, p1, p2, p3, tmin, tmax) {
+    .Call('_metadynminer3d_f3dp123', PACKAGE = 'metadynminer3d', cv1, cv2, cv3, width1, width2, width3, heights, x, y, z, p1, p2, p3, tmin, tmax)
+}
+
