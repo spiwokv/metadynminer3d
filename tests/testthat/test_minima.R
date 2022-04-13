@@ -69,5 +69,51 @@ test_that("Testing that fesminima correctly identifies energy minima", {
   minA<-summary(profs)[2,7]
   expect_equal(object=minA, expected=3.14, tolerance=0.01, scale=1)
   
+    # fespoint 3D
+  point<-fespoint(acealanme3d, c(3,3,3), imax=2000)
+  expect_equal(object=point, expected=-13.29, tolerance=0.01, scale=1)
+
+  # fespoint 3D with pertc(T,T,F)
+  acealanme3d2<-acealanme3d
+  acealanme3d2$per<-c(T,T,F)
+  point<-fespoint(acealanme3d2, c(3,3,3), imax=2000)
+  expect_equal(object=point, expected=-9.05, tolerance=0.01, scale=1)
+
+  # fespoint 3D with pertc(T,F,T)
+  acealanme3d2<-acealanme3d
+  acealanme3d2$per<-c(T,F,T)
+  point<-fespoint(acealanme3d2, c(3,3,3), imax=2000)
+  expect_equal(object=point, expected=-10.58, tolerance=0.01, scale=1)
+
+  # fespoint 3D with pertc(T,F,F)
+  acealanme3d2<-acealanme3d
+  acealanme3d2$per<-c(T,F,F)
+  point<-fespoint(acealanme3d2, c(3,3,3), imax=2000)
+  expect_equal(object=point, expected=-7.15, tolerance=0.01, scale=1)
+
+  # fespoint 3D with pertc(F,T,T)
+  acealanme3d2<-acealanme3d
+  acealanme3d2$per<-c(F,T,T)
+  point<-fespoint(acealanme3d2, c(3,3,3), imax=2000)
+  expect_equal(object=point, expected=-3.15, tolerance=0.01, scale=1)
+
+  # fespoint 3D with pertc(F,T,F)
+  acealanme3d2<-acealanme3d
+  acealanme3d2$per<-c(F,T,F)
+  point<-fespoint(acealanme3d2, c(3,3,3), imax=2000)
+  expect_equal(object=point, expected=-1.99, tolerance=0.01, scale=1)
+
+  # fespoint 3D with pertc(F,F,T)
+  acealanme3d2<-acealanme3d
+  acealanme3d2$per<-c(F,F,T)
+  point<-fespoint(acealanme3d2, c(3,3,3), imax=2000)
+  expect_equal(object=point, expected=-3.15, tolerance=0.01, scale=1)
+
+  # fespoint 3D with pertc(F,F,F)
+  acealanme3d2<-acealanme3d
+  acealanme3d2$per<-c(F,F,F)
+  point<-fespoint(acealanme3d2, c(3,3,3), imax=2000)
+  expect_equal(object=point, expected=-1.99, tolerance=0.01, scale=1)
+  
 })
 
