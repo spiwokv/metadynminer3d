@@ -514,7 +514,7 @@ BEGIN_RCPP
 END_RCPP
 }
 // f3d
-NumericVector f3d(NumericVector cv1, NumericVector cv2, NumericVector cv3, NumericVector width1, NumericVector width2, NumericVector width3, NumericVector heights, double x, double y, double z, int tmin, int tmax);
+double f3d(NumericVector cv1, NumericVector cv2, NumericVector cv3, NumericVector width1, NumericVector width2, NumericVector width3, NumericVector heights, double x, double y, double z, int tmin, int tmax);
 RcppExport SEXP _metadynminer3d_f3d(SEXP cv1SEXP, SEXP cv2SEXP, SEXP cv3SEXP, SEXP width1SEXP, SEXP width2SEXP, SEXP width3SEXP, SEXP heightsSEXP, SEXP xSEXP, SEXP ySEXP, SEXP zSEXP, SEXP tminSEXP, SEXP tmaxSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
@@ -536,7 +536,7 @@ BEGIN_RCPP
 END_RCPP
 }
 // f3dp1
-NumericVector f3dp1(NumericVector cv1, NumericVector cv2, NumericVector cv3, NumericVector width1, NumericVector width2, NumericVector width3, NumericVector heights, double x, double y, double z, double p1, int tmin, int tmax);
+double f3dp1(NumericVector cv1, NumericVector cv2, NumericVector cv3, NumericVector width1, NumericVector width2, NumericVector width3, NumericVector heights, double x, double y, double z, double p1, int tmin, int tmax);
 RcppExport SEXP _metadynminer3d_f3dp1(SEXP cv1SEXP, SEXP cv2SEXP, SEXP cv3SEXP, SEXP width1SEXP, SEXP width2SEXP, SEXP width3SEXP, SEXP heightsSEXP, SEXP xSEXP, SEXP ySEXP, SEXP zSEXP, SEXP p1SEXP, SEXP tminSEXP, SEXP tmaxSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
@@ -559,7 +559,7 @@ BEGIN_RCPP
 END_RCPP
 }
 // f3dp2
-NumericVector f3dp2(NumericVector cv1, NumericVector cv2, NumericVector cv3, NumericVector width1, NumericVector width2, NumericVector width3, NumericVector heights, double x, double y, double z, double p2, int tmin, int tmax);
+double f3dp2(NumericVector cv1, NumericVector cv2, NumericVector cv3, NumericVector width1, NumericVector width2, NumericVector width3, NumericVector heights, double x, double y, double z, double p2, int tmin, int tmax);
 RcppExport SEXP _metadynminer3d_f3dp2(SEXP cv1SEXP, SEXP cv2SEXP, SEXP cv3SEXP, SEXP width1SEXP, SEXP width2SEXP, SEXP width3SEXP, SEXP heightsSEXP, SEXP xSEXP, SEXP ySEXP, SEXP zSEXP, SEXP p2SEXP, SEXP tminSEXP, SEXP tmaxSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
@@ -582,7 +582,7 @@ BEGIN_RCPP
 END_RCPP
 }
 // f3dp3
-NumericVector f3dp3(NumericVector cv1, NumericVector cv2, NumericVector cv3, NumericVector width1, NumericVector width2, NumericVector width3, NumericVector heights, double x, double y, double z, double p3, int tmin, int tmax);
+double f3dp3(NumericVector cv1, NumericVector cv2, NumericVector cv3, NumericVector width1, NumericVector width2, NumericVector width3, NumericVector heights, double x, double y, double z, double p3, int tmin, int tmax);
 RcppExport SEXP _metadynminer3d_f3dp3(SEXP cv1SEXP, SEXP cv2SEXP, SEXP cv3SEXP, SEXP width1SEXP, SEXP width2SEXP, SEXP width3SEXP, SEXP heightsSEXP, SEXP xSEXP, SEXP ySEXP, SEXP zSEXP, SEXP p3SEXP, SEXP tminSEXP, SEXP tmaxSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
@@ -605,7 +605,7 @@ BEGIN_RCPP
 END_RCPP
 }
 // f3dp12
-NumericVector f3dp12(NumericVector cv1, NumericVector cv2, NumericVector cv3, NumericVector width1, NumericVector width2, NumericVector width3, NumericVector heights, double x, double y, double z, double p1, double p2, int tmin, int tmax);
+double f3dp12(NumericVector cv1, NumericVector cv2, NumericVector cv3, NumericVector width1, NumericVector width2, NumericVector width3, NumericVector heights, double x, double y, double z, double p1, double p2, int tmin, int tmax);
 RcppExport SEXP _metadynminer3d_f3dp12(SEXP cv1SEXP, SEXP cv2SEXP, SEXP cv3SEXP, SEXP width1SEXP, SEXP width2SEXP, SEXP width3SEXP, SEXP heightsSEXP, SEXP xSEXP, SEXP ySEXP, SEXP zSEXP, SEXP p1SEXP, SEXP p2SEXP, SEXP tminSEXP, SEXP tmaxSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
@@ -629,7 +629,7 @@ BEGIN_RCPP
 END_RCPP
 }
 // f3dp13
-NumericVector f3dp13(NumericVector cv1, NumericVector cv2, NumericVector cv3, NumericVector width1, NumericVector width2, NumericVector width3, NumericVector heights, double x, double y, double z, double p1, double p3, int tmin, int tmax);
+double f3dp13(NumericVector cv1, NumericVector cv2, NumericVector cv3, NumericVector width1, NumericVector width2, NumericVector width3, NumericVector heights, double x, double y, double z, double p1, double p3, int tmin, int tmax);
 RcppExport SEXP _metadynminer3d_f3dp13(SEXP cv1SEXP, SEXP cv2SEXP, SEXP cv3SEXP, SEXP width1SEXP, SEXP width2SEXP, SEXP width3SEXP, SEXP heightsSEXP, SEXP xSEXP, SEXP ySEXP, SEXP zSEXP, SEXP p1SEXP, SEXP p3SEXP, SEXP tminSEXP, SEXP tmaxSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
@@ -653,7 +653,7 @@ BEGIN_RCPP
 END_RCPP
 }
 // f3dp23
-NumericVector f3dp23(NumericVector cv1, NumericVector cv2, NumericVector cv3, NumericVector width1, NumericVector width2, NumericVector width3, NumericVector heights, double x, double y, double z, double p2, double p3, int tmin, int tmax);
+double f3dp23(NumericVector cv1, NumericVector cv2, NumericVector cv3, NumericVector width1, NumericVector width2, NumericVector width3, NumericVector heights, double x, double y, double z, double p2, double p3, int tmin, int tmax);
 RcppExport SEXP _metadynminer3d_f3dp23(SEXP cv1SEXP, SEXP cv2SEXP, SEXP cv3SEXP, SEXP width1SEXP, SEXP width2SEXP, SEXP width3SEXP, SEXP heightsSEXP, SEXP xSEXP, SEXP ySEXP, SEXP zSEXP, SEXP p2SEXP, SEXP p3SEXP, SEXP tminSEXP, SEXP tmaxSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
@@ -677,7 +677,7 @@ BEGIN_RCPP
 END_RCPP
 }
 // f3dp123
-NumericVector f3dp123(NumericVector cv1, NumericVector cv2, NumericVector cv3, NumericVector width1, NumericVector width2, NumericVector width3, NumericVector heights, double x, double y, double z, double p1, double p2, double p3, int tmin, int tmax);
+double f3dp123(NumericVector cv1, NumericVector cv2, NumericVector cv3, NumericVector width1, NumericVector width2, NumericVector width3, NumericVector heights, double x, double y, double z, double p1, double p2, double p3, int tmin, int tmax);
 RcppExport SEXP _metadynminer3d_f3dp123(SEXP cv1SEXP, SEXP cv2SEXP, SEXP cv3SEXP, SEXP width1SEXP, SEXP width2SEXP, SEXP width3SEXP, SEXP heightsSEXP, SEXP xSEXP, SEXP ySEXP, SEXP zSEXP, SEXP p1SEXP, SEXP p2SEXP, SEXP p3SEXP, SEXP tminSEXP, SEXP tmaxSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;

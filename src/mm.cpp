@@ -1242,7 +1242,7 @@ NumericVector fe3dp123(NumericVector cv1, NumericVector cv2, NumericVector cv3, 
 }
 
 // [[Rcpp::export]]
-NumericVector f3d(NumericVector cv1, NumericVector cv2, NumericVector cv3, NumericVector width1, NumericVector width2, NumericVector width3, NumericVector heights, double x, double y, double z, int tmin, int tmax) {
+double f3d(NumericVector cv1, NumericVector cv2, NumericVector cv3, NumericVector width1, NumericVector width2, NumericVector width3, NumericVector heights, double x, double y, double z, int tmin, int tmax) {
   double dcv1;
   double dcv2;
   double dcv3;
@@ -1258,7 +1258,7 @@ NumericVector f3d(NumericVector cv1, NumericVector cv2, NumericVector cv3, Numer
 }
 
 // [[Rcpp::export]]
-NumericVector f3dp1(NumericVector cv1, NumericVector cv2, NumericVector cv3, NumericVector width1, NumericVector width2, NumericVector width3, NumericVector heights, double x, double y, double z, double p1, int tmin, int tmax) {
+double f3dp1(NumericVector cv1, NumericVector cv2, NumericVector cv3, NumericVector width1, NumericVector width2, NumericVector width3, NumericVector heights, double x, double y, double z, double p1, int tmin, int tmax) {
   double dcv1;
   double dcv2;
   double dcv3;
@@ -1276,7 +1276,7 @@ NumericVector f3dp1(NumericVector cv1, NumericVector cv2, NumericVector cv3, Num
 }
 
 // [[Rcpp::export]]
-NumericVector f3dp2(NumericVector cv1, NumericVector cv2, NumericVector cv3, NumericVector width1, NumericVector width2, NumericVector width3, NumericVector heights, double x, double y, double z, double p2, int tmin, int tmax) {
+double f3dp2(NumericVector cv1, NumericVector cv2, NumericVector cv3, NumericVector width1, NumericVector width2, NumericVector width3, NumericVector heights, double x, double y, double z, double p2, int tmin, int tmax) {
   double dcv1;
   double dcv2;
   double dcv3;
@@ -1294,7 +1294,7 @@ NumericVector f3dp2(NumericVector cv1, NumericVector cv2, NumericVector cv3, Num
 }
 
 // [[Rcpp::export]]
-NumericVector f3dp3(NumericVector cv1, NumericVector cv2, NumericVector cv3, NumericVector width1, NumericVector width2, NumericVector width3, NumericVector heights, double x, double y, double z, double p3, int tmin, int tmax) {
+double f3dp3(NumericVector cv1, NumericVector cv2, NumericVector cv3, NumericVector width1, NumericVector width2, NumericVector width3, NumericVector heights, double x, double y, double z, double p3, int tmin, int tmax) {
   double dcv1;
   double dcv2;
   double dcv3;
@@ -1312,7 +1312,7 @@ NumericVector f3dp3(NumericVector cv1, NumericVector cv2, NumericVector cv3, Num
 }
 
 // [[Rcpp::export]]
-NumericVector f3dp12(NumericVector cv1, NumericVector cv2, NumericVector cv3, NumericVector width1, NumericVector width2, NumericVector width3, NumericVector heights, double x, double y, double z, double p1, double p2, int tmin, int tmax) {
+double f3dp12(NumericVector cv1, NumericVector cv2, NumericVector cv3, NumericVector width1, NumericVector width2, NumericVector width3, NumericVector heights, double x, double y, double z, double p1, double p2, int tmin, int tmax) {
   double dcv1;
   double dcv2;
   double dcv3;
@@ -1332,7 +1332,7 @@ NumericVector f3dp12(NumericVector cv1, NumericVector cv2, NumericVector cv3, Nu
 }
 
 // [[Rcpp::export]]
-NumericVector f3dp13(NumericVector cv1, NumericVector cv2, NumericVector cv3, NumericVector width1, NumericVector width2, NumericVector width3, NumericVector heights, double x, double y, double z, double p1, double p3, int tmin, int tmax) {
+double f3dp13(NumericVector cv1, NumericVector cv2, NumericVector cv3, NumericVector width1, NumericVector width2, NumericVector width3, NumericVector heights, double x, double y, double z, double p1, double p3, int tmin, int tmax) {
   double dcv1;
   double dcv2;
   double dcv3;
@@ -1352,7 +1352,7 @@ NumericVector f3dp13(NumericVector cv1, NumericVector cv2, NumericVector cv3, Nu
 }
 
 // [[Rcpp::export]]
-NumericVector f3dp23(NumericVector cv1, NumericVector cv2, NumericVector cv3, NumericVector width1, NumericVector width2, NumericVector width3, NumericVector heights, double x, double y, double z, double p2, double p3, int tmin, int tmax) {
+double f3dp23(NumericVector cv1, NumericVector cv2, NumericVector cv3, NumericVector width1, NumericVector width2, NumericVector width3, NumericVector heights, double x, double y, double z, double p2, double p3, int tmin, int tmax) {
   double dcv1;
   double dcv2;
   double dcv3;
@@ -1372,7 +1372,7 @@ NumericVector f3dp23(NumericVector cv1, NumericVector cv2, NumericVector cv3, Nu
 }
 
 // [[Rcpp::export]]
-NumericVector f3dp123(NumericVector cv1, NumericVector cv2, NumericVector cv3, NumericVector width1, NumericVector width2, NumericVector width3, NumericVector heights, double x, double y, double z, double p1, double p2, double p3, int tmin, int tmax) {
+double f3dp123(NumericVector cv1, NumericVector cv2, NumericVector cv3, NumericVector width1, NumericVector width2, NumericVector width3, NumericVector heights, double x, double y, double z, double p1, double p2, double p3, int tmin, int tmax) {
   double dcv1;
   double dcv2;
   double dcv3;
