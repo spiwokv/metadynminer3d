@@ -2,13 +2,13 @@
 [![Build Status](https://ci.appveyor.com/api/projects/status/github/spiwokv/metadynminer3d?branch=master&svg=true)](https://ci.appveyor.com/project/spiwokv/metadynminer3d) 
 [![CRAN status](https://www.r-pkg.org/badges/version/metadynminer3d)](https://cran.r-project.org/package=metadynminer3d) 
 [![CRAN downloads](https://cranlogs.r-pkg.org/badges/metadynminer3d)](https://cran.r-project.org/package=metadynminer3d)
-[![Rdoc](http://api.rdocumentation.org/badges/version/metadynminer3d)](http://www.rdocumentation.org/packages/metadynminer3d)
-[![codecov](https://codecov.io/gh/spiwokv/metadynminer3d/branch/master/graph/badge.svg)](https://codecov.io/gh/spiwokv/metadynminer3d/)
+[![Rdoc](https://api.rdocumentation.org/badges/version/metadynminer3d)](https://www.rdocumentation.org/packages/metadynminer3d)
+[![codecov](https://codecov.io/gh/spiwokv/metadynminer3d/branch/master/graph/badge.svg)](https://app.codecov.io/gh/spiwokv/metadynminer3d/)
 
 # MetadynMiner3d
 
 ## Web site
-http://metadynamics.cz/metadynminer3d/
+https://metadynamics.cz/metadynminer3d/
 
 https://spiwokv.github.io/metadynminer3d/ ([pkgdown](https://pkgdown.r-lib.org/) web)
 
