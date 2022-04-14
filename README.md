@@ -136,5 +136,5 @@ after `plot` command. This makes the x-axis twice longer than other axes.
 ## Contact
 Vojtech Spiwok - spiwokv{youknowwhat}vscht.cz
 
-To contribute, se [CONTRIBUTING.md](./CONTRIBUTING.md)
+To contribute, se [CONTRIBUTING.md](https://github.com/spiwokv/metadynminer/blob/master/CONTRIBUTING.md)
 
